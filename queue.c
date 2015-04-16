@@ -1,27 +1,21 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <stdio.h>
+
 #include "queue.h"
 
-/* allocation */
 queue *new_queue( void ) {
+    // allocate queue pointer
     queue *q = malloc( sizeof( *q ) );
     if ( q == NULL ) {
         fprintf( stderr, "mem error\n" );
         exit( 1 );
     }
 
-    q->arr = malloc( sizeof( *q->arr ) );
+    // allocate node array pointer
+    q->arr = malloc( DEF_SZ * sizeof( *q->arr ) );
     if ( q->arr == NULL ) {
         fprintf( stderr, "mem error\n" );
-        free( q );
-        exit( 1 );
-    }
-
-    *q->arr = malloc( DEF_SZ * sizeof( **q->arr ) );
-    if ( *q->arr == NULL ) {
-        fprintf( stderr, "mem error\n" );
-        free( q->arr );
         free( q );
         exit( 1 );
     }
@@ -36,12 +30,11 @@ void free_queue( queue **q ) {
         return;
     }
 
-    free( *( *q )->arr );
-    *( *q )->arr = NULL;
-
+    // free node array pointer
     free( ( *q )->arr );
     ( *q )->arr = NULL;
-    
+
+    // free queue pointer
     free( *q );
     *q = NULL;
 }
@@ -56,10 +49,8 @@ size_t resize_queue( queue **q ) {
     return new_cap;
 }
 
-
-/* operations */
 bool offer( queue *q, node *el ) {
-    if ( q == NULL ) {
+    if ( q == NULL || el == NULL ) {
         return false;
     }
 
@@ -67,8 +58,7 @@ bool offer( queue *q, node *el ) {
         q->cap = resize_queue( &q );
     }
 
-    q->arr[ q->size ] = el;
-    q->size++;
+    q->arr[ q->size++ ] = el;
     return true;
 }
 
@@ -82,6 +72,7 @@ node *poll( queue *q ) {
     for ( size_t i = 0; i < q->size; i++ ) {
         q->arr[i] = q->arr[i + 1];
     }
+
     q->size--;
     return el;
 }
@@ -95,10 +86,9 @@ node *peek( const queue *q ) {
     return q->arr[0];
 }
 
-
-/* util */
 void print_queue( const queue *q ) {
     if ( q == NULL ) {
+        fprintf( stderr, "illegal access\n" );
         return;
     }
 

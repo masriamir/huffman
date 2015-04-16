@@ -15,12 +15,13 @@ int main ( void ) {
         free( n );
     }*/
     queue *q = new_queue();
-    /*for ( size_t i = 0; i < 6; i++ ) {
+    for ( size_t i = 0; i < 6; i++ ) {
         node *n = new_node( charmap[i].c, charmap[i].freq, NULL, NULL );
         print_node( n );
-        //offer( q, n );
+        offer( q, n );
         free_node( &n );
-    }*/
+    }
+    print_queue( q );
     free_queue( &q );
     //node *root = build_tree( charmap, 6 );
     //free_node( &root );

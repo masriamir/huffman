@@ -22,10 +22,10 @@ node *new_node( const char c, const int freq, node *left, node *right ) {
 void free_node( node **n ) {
     if ( *n == NULL ) {
         return;
-    } else {
-        free( *n );
-        *n = NULL;
     }
+
+    free( *n );
+    *n = NULL;
 }
 
 bool is_leaf( const node *n ) {
@@ -37,6 +37,11 @@ bool is_leaf( const node *n ) {
 }
 
 void print_node( const node *n ) {
+    if ( n == NULL ) {
+        fprintf( stderr, "illegal access\n" );
+        return;
+    }
+
     printf( "node[c = %c, freq = %d, left = %p, right = %p]\n",
             n->c, n->freq, ( void * )n->left, ( void * )n->right );
 }
