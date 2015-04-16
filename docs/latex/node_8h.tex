@@ -1,0 +1,99 @@
+\hypertarget{node_8h}{}\section{node.\+h File Reference}
+\label{node_8h}\index{node.\+h@{node.\+h}}
+
+
+huffman node implementation  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structnode__t}{node\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Node struct to build a huffman tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{node_8h_a85b4f4124a5616dea92c9e8a221a8db5}{}typedef struct \hyperlink{structnode__t}{node\+\_\+t} {\bfseries node}\label{node_8h_a85b4f4124a5616dea92c9e8a221a8db5}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structnode__t}{node} \hyperlink{node_8h_a13792f10df7ff13087d34d3d71fe005f}{new\+\_\+node} (const char, const int, \hyperlink{structnode__t}{node} $\ast$, \hyperlink{structnode__t}{node} $\ast$)
+\begin{DoxyCompactList}\small\item\em Allocates and returns a new node pointer. \end{DoxyCompactList}\item 
+bool \hyperlink{node_8h_affc6b3c7704df3415f05fd0b970895cd}{is\+\_\+leaf} (const \hyperlink{structnode__t}{node})
+\begin{DoxyCompactList}\small\item\em Returns true if the node has no children, false otherwise. \end{DoxyCompactList}\item 
+void \hyperlink{node_8h_a801b306789a7e6cdc87d68a4a77d9496}{print\+\_\+node} (const \hyperlink{structnode__t}{node})
+\begin{DoxyCompactList}\small\item\em Prints the contents of a node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+huffman node implementation 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{node_8h_affc6b3c7704df3415f05fd0b970895cd}{}\index{node.\+h@{node.\+h}!is\+\_\+leaf@{is\+\_\+leaf}}
+\index{is\+\_\+leaf@{is\+\_\+leaf}!node.\+h@{node.\+h}}
+\subsubsection[{is\+\_\+leaf}]{\setlength{\rightskip}{0pt plus 5cm}bool is\+\_\+leaf (
+\begin{DoxyParamCaption}
+\item[{const {\bf node}}]{}
+\end{DoxyParamCaption}
+)}\label{node_8h_affc6b3c7704df3415f05fd0b970895cd}
+
+
+Returns true if the node has no children, false otherwise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & the node to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if node is a leaf, false otherwise 
+\end{DoxyReturn}
+\hypertarget{node_8h_a13792f10df7ff13087d34d3d71fe005f}{}\index{node.\+h@{node.\+h}!new\+\_\+node@{new\+\_\+node}}
+\index{new\+\_\+node@{new\+\_\+node}!node.\+h@{node.\+h}}
+\subsubsection[{new\+\_\+node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf node} new\+\_\+node (
+\begin{DoxyParamCaption}
+\item[{const char}]{, }
+\item[{const int}]{, }
+\item[{{\bf node} $\ast$}]{, }
+\item[{{\bf node} $\ast$}]{}
+\end{DoxyParamCaption}
+)}\label{node_8h_a13792f10df7ff13087d34d3d71fe005f}
+
+
+Allocates and returns a new node pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & character \\
+\hline
+{\em freq} & frequency \\
+\hline
+{\em left} & left child \\
+\hline
+{\em right} & right child \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the allocated node 
+\end{DoxyReturn}
+\hypertarget{node_8h_a801b306789a7e6cdc87d68a4a77d9496}{}\index{node.\+h@{node.\+h}!print\+\_\+node@{print\+\_\+node}}
+\index{print\+\_\+node@{print\+\_\+node}!node.\+h@{node.\+h}}
+\subsubsection[{print\+\_\+node}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+node (
+\begin{DoxyParamCaption}
+\item[{const {\bf node}}]{}
+\end{DoxyParamCaption}
+)}\label{node_8h_a801b306789a7e6cdc87d68a4a77d9496}
+
+
+Prints the contents of a node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & the node to print \\
+\hline
+\end{DoxyParams}
