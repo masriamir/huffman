@@ -11,9 +11,18 @@ queue *new_queue( void ) {
         exit( 1 );
     }
 
-    q->arr = malloc( DEF_SZ * sizeof( *q->arr ) );
+    q->arr = malloc( sizeof( *q->arr ) );
     if ( q->arr == NULL ) {
         fprintf( stderr, "mem error\n" );
+        free( q );
+        exit( 1 );
+    }
+
+    *q->arr = malloc( DEF_SZ * sizeof( **q->arr ) );
+    if ( *q->arr == NULL ) {
+        fprintf( stderr, "mem error\n" );
+        free( q->arr );
+        free( q );
         exit( 1 );
     }
 
@@ -22,16 +31,19 @@ queue *new_queue( void ) {
     return q;
 }
 
-void free_queue( queue *q ) {
-    if ( q == NULL ) {
+void free_queue( queue **q ) {
+    if ( *q == NULL ) {
         return;
     }
 
-    free( q->arr );
-    q->arr = NULL;
+    free( *( *q )->arr );
+    *( *q )->arr = NULL;
+
+    free( ( *q )->arr );
+    ( *q )->arr = NULL;
     
-    free( q );
-    q = NULL;
+    free( *q );
+    *q = NULL;
 }
 
 size_t resize_queue( queue **q ) {
@@ -46,7 +58,7 @@ size_t resize_queue( queue **q ) {
 
 
 /* operations */
-bool offer( queue *q, const node el ) {
+bool offer( queue *q, node *el ) {
     if ( q == NULL ) {
         return false;
     }
@@ -60,13 +72,13 @@ bool offer( queue *q, const node el ) {
     return true;
 }
 
-node poll( queue *q ) {
+node *poll( queue *q ) {
     if ( q == NULL || q->size == 0 ) {
         fprintf( stderr, "illegal access\n" );
         exit( 1 );
     }
 
-    node el = q->arr[0];
+    node *el = q->arr[0];
     for ( size_t i = 0; i < q->size; i++ ) {
         q->arr[i] = q->arr[i + 1];
     }
@@ -74,7 +86,7 @@ node poll( queue *q ) {
     return el;
 }
 
-node peek( const queue *q ) {
+node *peek( const queue *q ) {
     if ( q == NULL || q->size == 0 ) {
         fprintf( stderr, "illegal access\n" );
         exit( 1 );

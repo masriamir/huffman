@@ -1,14 +1,12 @@
 /**
  * @file
- * @brief huffman node implementation
+ * @brief Huffman node implementation (24 bytes).
  */
 
 #ifndef NODE_H
 #define NODE_H
 
 #include <stdbool.h>
-
-//typedef struct node_t node;
 
 /**
  * Node struct to build a huffman tree.
@@ -28,20 +26,25 @@ typedef struct node_t {
  * @param right right child
  * @return the allocated node
  */
-node new_node( const char, const int, node *, node * );
-//void free_node( node ** );
+node *new_node( const char, const int, node *, node * );
+
+/**
+ * Frees the given node from memory.
+ * @param n the address of the node pointer
+ */
+void free_node( node ** );
 
 /**
  * Returns true if the node has no children, false otherwise.
  * @param n the node to check
  * @return true if node is a leaf, false otherwise
  */
-bool is_leaf( const node );
+bool is_leaf( const node * );
 
 /**
  * Prints the contents of a node.
  * @param n the node to print
  */
-void print_node( const node );
+void print_node( const node * );
 
 #endif
