@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+
 #include "wf.h"
 #include "node.h"
 #include "queue.h"
