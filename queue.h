@@ -11,7 +11,7 @@
 
 #define DEF_SZ 8
 
-typedef struct queue {
+typedef struct queue_t {
     node **arr;
     size_t size;
     size_t cap;
