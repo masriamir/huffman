@@ -28,6 +28,11 @@ void free_queue( queue **q ) {
         return;
     }
 
+    for ( size_t i = 0; i < ( *q )->size; i++ ) {
+        free( ( *q )->arr[i] );
+        ( *q )->arr[i] = NULL;
+    }
+
     free( ( *q )->arr );
     ( *q )->arr = NULL;
 

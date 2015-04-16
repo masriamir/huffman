@@ -15,11 +15,11 @@ int main ( void ) {
         free( n );
     }*/
     queue *q = new_queue();
-    for ( size_t i = 0; i < 6; i++ ) {
-        node *n = new_node( charmap[i].c, charmap[i].freq, NULL, NULL );
-        print_node( n );
-        offer( q, n );
-        free_node( &n );
+    for ( size_t i = 0; i < 9; i++ ) {
+        //node *n = new_node( 'a', 4, NULL, NULL );
+        //print_node( n );
+        offer( q, new_node( 'a', 4, NULL, NULL ) );
+        //free_node( &n );
     }
     print_queue( q );
     free_queue( &q );
