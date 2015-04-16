@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+
 #include "wf.h"
 #include "node.h"
 #include "tree.h"
@@ -14,18 +15,20 @@ int main ( void ) {
         print_node( n );
         free( n );
     }*/
-    queue *q = new_queue();
-    for ( size_t i = 0; i < 9; i++ ) {
+    //queue *q = new_queue();
+    //for ( size_t i = 0; i < 9; i++ ) {
         //node *n = new_node( 'a', 4, NULL, NULL );
         //print_node( n );
-        offer( q, new_node( 'a', 4, NULL, NULL ) );
+        //offer( q, new_node( 'a', 4, NULL, NULL ) );
         //free_node( &n );
-    }
-    print_queue( q );
-    free_queue( &q );
-    //node *root = build_tree( charmap, 6 );
-    //free_node( &root );
-    //print_node( root );
+    //}
+    //print_queue( q );
+    //TODO root contains all node pointers!!!
+    //TODO nothing was freed yet, must remember to free the tree!!!
+    node *root = build_tree( charmap, 6 );
+    print_node( root );
+    free_node( &root );
+    //free_queue( &q );
     free_wf_items( &charmap );
     return 0;
 }
