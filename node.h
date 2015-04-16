@@ -8,17 +8,17 @@
 
 #include <stdbool.h>
 
-typedef struct node_t node;
+//typedef struct node_t node;
 
 /**
  * Node struct to build a huffman tree.
  */
-struct node_t {
+typedef struct node_t {
     char c; ///< character
     int freq; ///< frequency
-    node *left; ///< left child
-    node *right; ///< right child
-};
+    struct node_t *left; ///< left child
+    struct node_t *right; ///< right child
+} node;
 
 /**
  * Allocates and returns a new node pointer.
