@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['right',['right',['../structnode__t.html#aa66c42107529e61f602aa0010b286ecd',1,'node_t']]]
+  ['left',['left',['../structnode__t.html#ac08d5277af93a445d358059e7ac81cb1',1,'node_t']]]
 ];

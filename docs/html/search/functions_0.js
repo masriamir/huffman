@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['is_5fleaf',['is_leaf',['../node_8h.html#affc6b3c7704df3415f05fd0b970895cd',1,'node.c']]]
+  ['free_5fnode',['free_node',['../node_8h.html#a7b57940e26d1048f921901492443f67c',1,'node.c']]],
+  ['free_5fqueue',['free_queue',['../queue_8h.html#a75dca173dc6068abc37c74b9f6b1b10c',1,'queue.c']]]
 ];

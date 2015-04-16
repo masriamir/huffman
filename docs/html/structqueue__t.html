@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>Huffman: Data Fields - Variables</title>
+<title>Huffman: queue_t Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,16 +64,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="classes.html"><span>Data&#160;Structure&#160;Index</span></a></li>
-      <li class="current"><a href="functions.html"><span>Data&#160;Fields</span></a></li>
+      <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
     </ul>
   </div>
-  <div id="navrow3" class="tabs2">
-    <ul class="tablist">
-      <li><a href="functions.html"><span>All</span></a></li>
-      <li class="current"><a href="functions_vars.html"><span>Variables</span></a></li>
-    </ul>
-  </div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -88,29 +81,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle">
+<div class="title">queue_t Struct Reference</div>  </div>
+</div><!--header-->
 <div class="contents">
-&#160;<ul>
-<li>arr
-: <a class="el" href="structqueue__t.html#ae332a245e06417717ef1ad4a86d4e809">queue_t</a>
-</li>
-<li>c
-: <a class="el" href="structnode__t.html#a7f633b088a3b91fb5db93deb4523ea1a">node_t</a>
-</li>
-<li>cap
-: <a class="el" href="structqueue__t.html#a5bef0472d958627890767949d1c5d6cd">queue_t</a>
-</li>
-<li>freq
-: <a class="el" href="structnode__t.html#a9e42b84da748936e09ca0bb534f21cbc">node_t</a>
-</li>
-<li>left
-: <a class="el" href="structnode__t.html#ac08d5277af93a445d358059e7ac81cb1">node_t</a>
-</li>
-<li>right
-: <a class="el" href="structnode__t.html#ad966fa756fa1d26aca1d092126d9c9c7">node_t</a>
-</li>
-<li>size
-: <a class="el" href="structqueue__t.html#a83a13b888f9d4ef127d706559818b779">queue_t</a>
-</li>
+
+<p>Array implementation of a queue of nodes.  
+ <a href="structqueue__t.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="queue_8h_source.html">queue.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:ae332a245e06417717ef1ad4a86d4e809"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae332a245e06417717ef1ad4a86d4e809"></a>
+<a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqueue__t.html#ae332a245e06417717ef1ad4a86d4e809">arr</a></td></tr>
+<tr class="memdesc:ae332a245e06417717ef1ad4a86d4e809"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to an array of nodes <br /></td></tr>
+<tr class="separator:ae332a245e06417717ef1ad4a86d4e809"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83a13b888f9d4ef127d706559818b779"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a83a13b888f9d4ef127d706559818b779"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqueue__t.html#a83a13b888f9d4ef127d706559818b779">size</a></td></tr>
+<tr class="memdesc:a83a13b888f9d4ef127d706559818b779"><td class="mdescLeft">&#160;</td><td class="mdescRight">size of the queue <br /></td></tr>
+<tr class="separator:a83a13b888f9d4ef127d706559818b779"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bef0472d958627890767949d1c5d6cd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5bef0472d958627890767949d1c5d6cd"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqueue__t.html#a5bef0472d958627890767949d1c5d6cd">cap</a></td></tr>
+<tr class="memdesc:a5bef0472d958627890767949d1c5d6cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">maximum capacity of the queue <br /></td></tr>
+<tr class="separator:a5bef0472d958627890767949d1c5d6cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Array implementation of a queue of nodes. </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<li><a class="el" href="queue_8h_source.html">queue.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

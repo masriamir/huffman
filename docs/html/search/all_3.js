@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['left',['left',['../structnode__t.html#a4e53ca4e5ec812e9aa5bbffd00daaf34',1,'node_t']]]
+  ['is_5fleaf',['is_leaf',['../node_8h.html#a395a1095daa9eb12d805370638483424',1,'node.c']]]
 ];

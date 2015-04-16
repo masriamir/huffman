@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>huffman node implementation  
+<p>Huffman node implementation (24 bytes).  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 </div>
@@ -105,33 +105,61 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a85b4f4124a5616dea92c9e8a221a8db5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85b4f4124a5616dea92c9e8a221a8db5"></a>
-typedef struct <a class="el" href="structnode__t.html">node_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>node</b></td></tr>
-<tr class="separator:a85b4f4124a5616dea92c9e8a221a8db5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c1c4438956188a85fe68f77f997b9e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1c1c4438956188a85fe68f77f997b9e0"></a>
+typedef struct <a class="el" href="structnode__t.html">node_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a></td></tr>
+<tr class="memdesc:a1c1c4438956188a85fe68f77f997b9e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Node struct to build a huffman tree. <br /></td></tr>
+<tr class="separator:a1c1c4438956188a85fe68f77f997b9e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a13792f10df7ff13087d34d3d71fe005f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnode__t.html">node</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="node_8h.html#a13792f10df7ff13087d34d3d71fe005f">new_node</a> (const char, const int, <a class="el" href="structnode__t.html">node</a> *, <a class="el" href="structnode__t.html">node</a> *)</td></tr>
-<tr class="memdesc:a13792f10df7ff13087d34d3d71fe005f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates and returns a new node pointer.  <a href="#a13792f10df7ff13087d34d3d71fe005f">More...</a><br /></td></tr>
-<tr class="separator:a13792f10df7ff13087d34d3d71fe005f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affc6b3c7704df3415f05fd0b970895cd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="node_8h.html#affc6b3c7704df3415f05fd0b970895cd">is_leaf</a> (const <a class="el" href="structnode__t.html">node</a>)</td></tr>
-<tr class="memdesc:affc6b3c7704df3415f05fd0b970895cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the node has no children, false otherwise.  <a href="#affc6b3c7704df3415f05fd0b970895cd">More...</a><br /></td></tr>
-<tr class="separator:affc6b3c7704df3415f05fd0b970895cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a801b306789a7e6cdc87d68a4a77d9496"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="node_8h.html#a801b306789a7e6cdc87d68a4a77d9496">print_node</a> (const <a class="el" href="structnode__t.html">node</a>)</td></tr>
-<tr class="memdesc:a801b306789a7e6cdc87d68a4a77d9496"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the contents of a node.  <a href="#a801b306789a7e6cdc87d68a4a77d9496">More...</a><br /></td></tr>
-<tr class="separator:a801b306789a7e6cdc87d68a4a77d9496"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ee37dda1ea8d5bf443f87599dd145ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="node_8h.html#a5ee37dda1ea8d5bf443f87599dd145ac">new_node</a> (const char, const int, <a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *, <a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *)</td></tr>
+<tr class="memdesc:a5ee37dda1ea8d5bf443f87599dd145ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates and returns a new node pointer.  <a href="#a5ee37dda1ea8d5bf443f87599dd145ac">More...</a><br /></td></tr>
+<tr class="separator:a5ee37dda1ea8d5bf443f87599dd145ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b57940e26d1048f921901492443f67c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="node_8h.html#a7b57940e26d1048f921901492443f67c">free_node</a> (<a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> **)</td></tr>
+<tr class="memdesc:a7b57940e26d1048f921901492443f67c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the given node from memory.  <a href="#a7b57940e26d1048f921901492443f67c">More...</a><br /></td></tr>
+<tr class="separator:a7b57940e26d1048f921901492443f67c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a395a1095daa9eb12d805370638483424"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="node_8h.html#a395a1095daa9eb12d805370638483424">is_leaf</a> (const <a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *)</td></tr>
+<tr class="memdesc:a395a1095daa9eb12d805370638483424"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the node has no children, false otherwise.  <a href="#a395a1095daa9eb12d805370638483424">More...</a><br /></td></tr>
+<tr class="separator:a395a1095daa9eb12d805370638483424"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15b396f7ccd7022ea8b448d1cfdcd3a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="node_8h.html#a15b396f7ccd7022ea8b448d1cfdcd3a5">print_node</a> (const <a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *)</td></tr>
+<tr class="memdesc:a15b396f7ccd7022ea8b448d1cfdcd3a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the contents of a node.  <a href="#a15b396f7ccd7022ea8b448d1cfdcd3a5">More...</a><br /></td></tr>
+<tr class="separator:a15b396f7ccd7022ea8b448d1cfdcd3a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>huffman node implementation </p>
+<div class="textblock"><p>Huffman node implementation (24 bytes). </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="affc6b3c7704df3415f05fd0b970895cd"></a>
+<a class="anchor" id="a7b57940e26d1048f921901492443f67c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void free_node </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> **&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Frees the given node from memory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>the address of the node pointer to free </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a395a1095daa9eb12d805370638483424"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">bool is_leaf </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structnode__t.html">node</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -141,7 +169,7 @@ Functions</h2></td></tr>
 <p>Returns true if the node has no children, false otherwise. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">n</td><td>the node to check </td></tr>
+    <tr><td class="paramname">n</td><td>the node pointer to check </td></tr>
   </table>
   </dd>
 </dl>
@@ -149,12 +177,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a13792f10df7ff13087d34d3d71fe005f"></a>
+<a class="anchor" id="a5ee37dda1ea8d5bf443f87599dd145ac"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structnode__t.html">node</a> new_node </td>
+          <td class="memname"><a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a>* new_node </td>
           <td>(</td>
           <td class="paramtype">const char&#160;</td>
           <td class="paramname">, </td>
@@ -168,13 +196,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structnode__t.html">node</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structnode__t.html">node</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -188,25 +216,25 @@ Functions</h2></td></tr>
 <p>Allocates and returns a new node pointer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">c</td><td>character </td></tr>
-    <tr><td class="paramname">freq</td><td>frequency </td></tr>
-    <tr><td class="paramname">left</td><td>left child </td></tr>
-    <tr><td class="paramname">right</td><td>right child </td></tr>
+    <tr><td class="paramname">c</td><td>the character </td></tr>
+    <tr><td class="paramname">freq</td><td>the character's frequency </td></tr>
+    <tr><td class="paramname">left</td><td>node pointer to the left child </td></tr>
+    <tr><td class="paramname">right</td><td>node pointer to the right child </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the allocated node </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the allocated node pointer </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a801b306789a7e6cdc87d68a4a77d9496"></a>
+<a class="anchor" id="a15b396f7ccd7022ea8b448d1cfdcd3a5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void print_node </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structnode__t.html">node</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -216,7 +244,7 @@ Functions</h2></td></tr>
 <p>Prints the contents of a node. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">n</td><td>the node to print </td></tr>
+    <tr><td class="paramname">n</td><td>the node pointer to print </td></tr>
   </table>
   </dd>
 </dl>
@@ -226,7 +254,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 16 2015 12:25:51 for Huffman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 16 2015 16:38:09 for Huffman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
