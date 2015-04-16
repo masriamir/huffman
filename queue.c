@@ -5,14 +5,12 @@
 #include "queue.h"
 
 queue *new_queue( void ) {
-    // allocate queue pointer
     queue *q = malloc( sizeof( *q ) );
     if ( q == NULL ) {
         fprintf( stderr, "mem error\n" );
         exit( 1 );
     }
 
-    // allocate node array pointer
     q->arr = malloc( DEF_SZ * sizeof( *q->arr ) );
     if ( q->arr == NULL ) {
         fprintf( stderr, "mem error\n" );
@@ -30,11 +28,9 @@ void free_queue( queue **q ) {
         return;
     }
 
-    // free node array pointer
     free( ( *q )->arr );
     ( *q )->arr = NULL;
 
-    // free queue pointer
     free( *q );
     *q = NULL;
 }
@@ -89,7 +85,7 @@ node *peek( const queue *q ) {
 void print_queue( const queue *q ) {
     if ( q == NULL ) {
         fprintf( stderr, "illegal access\n" );
-        return;
+        exit( 1 );
     }
 
     printf( "queue[size = %zu, capacity = %zu]\n", q->size, q->cap );

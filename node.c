@@ -30,7 +30,8 @@ void free_node( node **n ) {
 
 bool is_leaf( const node *n ) {
     if ( n == NULL ) {
-        return false;
+        fprintf( stderr, "illegal access\n" );
+        exit( 1 );
     }
 
     return ( n->left == NULL && n->right == NULL );
@@ -39,7 +40,7 @@ bool is_leaf( const node *n ) {
 void print_node( const node *n ) {
     if ( n == NULL ) {
         fprintf( stderr, "illegal access\n" );
-        return;
+        exit( 1 );
     }
 
     printf( "node[c = %c, freq = %d, left = %p, right = %p]\n",
