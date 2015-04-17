@@ -9,7 +9,7 @@
 #include <stdbool.h>
 #include "node.h"
 
-#define DEF_SZ 8
+#define DEF_SZ 8 ///< the default capacity of a queue
 
 /**
  * Array implementation of a queue of nodes.
@@ -41,28 +41,29 @@ size_t resize_queue( queue ** );
 
 /**
  * Adds the given node to a queue.
- * @param q the queue
- * @param n the node to add
+ * @param q the queue pointer
+ * @param n the node pointer to add
  * @return true if successful, false otherwise
  */
 bool offer( queue *, node * );
 
 /**
  * Returns and removes the head of the queue.
- * @param q the queue
+ * @param q the queue pointer
+ * @return a pointer to the head of the queue
  */
 node *poll( queue * );
 
 /**
  * Returns, but does not remove, the head of the queue.
- * @param q the queue
- * @return the head of the queue
+ * @param q the queue pointer
+ * @return a pointer to the head of the queue
  */
 node *peek( const queue * );
 
 /**
- * Print the contents of a queue.
- * @param q the queue to print
+ * Prints the contents of a queue.
+ * @param q the queue pointer to print
  */
 void print_queue( const queue * );
 
