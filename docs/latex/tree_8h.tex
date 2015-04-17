@@ -9,7 +9,9 @@ Huffman tree builder.
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{node_8h_a1c1c4438956188a85fe68f77f997b9e0}{node} $\ast$ \hyperlink{tree_8h_a8273ff009f86af613ae43cc422b04353}{build\+\_\+tree} (const \hyperlink{structwf__item}{wf\+\_\+item} $\ast$, const size\+\_\+t)
-\begin{DoxyCompactList}\small\item\em Constructs a Huffman tree and returns the root node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructs a Huffman tree and returns the root node. \end{DoxyCompactList}\item 
+void \hyperlink{tree_8h_ae3252b938b1a968a5b8bba2b72a34807}{free\+\_\+tree} (\hyperlink{node_8h_a1c1c4438956188a85fe68f77f997b9e0}{node} $\ast$$\ast$)
+\begin{DoxyCompactList}\small\item\em Frees the tree represented by the given root node pointer from memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -40,3 +42,19 @@ Constructs a Huffman tree and returns the root node.
 \begin{DoxyReturn}{Returns}
 the root node of the tree 
 \end{DoxyReturn}
+\hypertarget{tree_8h_ae3252b938b1a968a5b8bba2b72a34807}{}\index{tree.\+h@{tree.\+h}!free\+\_\+tree@{free\+\_\+tree}}
+\index{free\+\_\+tree@{free\+\_\+tree}!tree.\+h@{tree.\+h}}
+\subsubsection[{free\+\_\+tree}]{\setlength{\rightskip}{0pt plus 5cm}void free\+\_\+tree (
+\begin{DoxyParamCaption}
+\item[{{\bf node} $\ast$$\ast$}]{}
+\end{DoxyParamCaption}
+)}\label{tree_8h_ae3252b938b1a968a5b8bba2b72a34807}
+
+
+Frees the tree represented by the given root node pointer from memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & the address of the root node pointer to the tree \\
+\hline
+\end{DoxyParams}

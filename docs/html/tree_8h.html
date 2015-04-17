@@ -99,6 +99,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a8273ff009f86af613ae43cc422b04353"><td class="memItemLeft" align="right" valign="top"><a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree_8h.html#a8273ff009f86af613ae43cc422b04353">build_tree</a> (const <a class="el" href="structwf__item.html">wf_item</a> *, const size_t)</td></tr>
 <tr class="memdesc:a8273ff009f86af613ae43cc422b04353"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a Huffman tree and returns the root node.  <a href="#a8273ff009f86af613ae43cc422b04353">More...</a><br /></td></tr>
 <tr class="separator:a8273ff009f86af613ae43cc422b04353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3252b938b1a968a5b8bba2b72a34807"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree_8h.html#ae3252b938b1a968a5b8bba2b72a34807">free_tree</a> (<a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> **)</td></tr>
+<tr class="memdesc:ae3252b938b1a968a5b8bba2b72a34807"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the tree represented by the given root node pointer from memory.  <a href="#ae3252b938b1a968a5b8bba2b72a34807">More...</a><br /></td></tr>
+<tr class="separator:ae3252b938b1a968a5b8bba2b72a34807"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Huffman tree builder. </p>
@@ -139,10 +142,34 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ae3252b938b1a968a5b8bba2b72a34807"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void free_tree </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> **&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Frees the tree represented by the given root node pointer from memory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>the address of the root node pointer to the tree </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 16 2015 17:33:45 for Huffman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 17 2015 10:07:19 for Huffman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
