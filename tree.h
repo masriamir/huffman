@@ -14,4 +14,10 @@
  */
 node *build_tree( const wf_item *, const size_t );
 
+/**
+ * Frees the tree represented by the given root node pointer from memory.
+ * @param n the address of the root node pointer to the tree
+ */
+void free_tree( node ** );
+
 #endif
