@@ -1,0 +1,182 @@
+\hypertarget{map_8h}{}\section{map.\+h File Reference}
+\label{map_8h}\index{map.\+h@{map.\+h}}
+
+
+Array-\/based map implementation using character-\/frequency pairs.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcf__pair__t}{cf\+\_\+pair\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Character-\/frequency pair struct used to build a map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{map_8h_a6c61effb25be9e803a462b22e1b23413}{}\#define \hyperlink{map_8h_a6c61effb25be9e803a462b22e1b23413}{A\+S\+C\+I\+I\+\_\+\+L\+E\+N\+G\+T\+H}~256\label{map_8h_a6c61effb25be9e803a462b22e1b23413}
+
+\begin{DoxyCompactList}\small\item\em number of A\+S\+C\+I\+I characters \end{DoxyCompactList}\item 
+\hypertarget{map_8h_a5d79910fb5dded9534508894fdad0577}{}\#define \hyperlink{map_8h_a5d79910fb5dded9534508894fdad0577}{E\+L\+E\+M\+E\+N\+T\+S}(x)~( sizeof( x ) / sizeof( x\mbox{[}0\mbox{]} ) )\label{map_8h_a5d79910fb5dded9534508894fdad0577}
+
+\begin{DoxyCompactList}\small\item\em length of an array \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{map_8h_ab7955e3b339d8b8fa70abdb7d69a75f8}{}typedef struct \hyperlink{structcf__pair__t}{cf\+\_\+pair\+\_\+t} \hyperlink{map_8h_ab7955e3b339d8b8fa70abdb7d69a75f8}{cf\+\_\+pair}\label{map_8h_ab7955e3b339d8b8fa70abdb7d69a75f8}
+
+\begin{DoxyCompactList}\small\item\em Character-\/frequency pair struct used to build a map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{map_8h_ab7955e3b339d8b8fa70abdb7d69a75f8}{cf\+\_\+pair} $\ast$ \hyperlink{map_8h_a7f713ddbaafdb51ac674cad518de2288}{word\+\_\+frequency} (const char $\ast$)
+\begin{DoxyCompactList}\small\item\em Allocates and returns a new map of character-\/frequency pairs. \end{DoxyCompactList}\item 
+void \hyperlink{map_8h_afea5f53d42f3bbf26f8feb35eea40fd8}{free\+\_\+cf\+\_\+pairs} (\hyperlink{map_8h_ab7955e3b339d8b8fa70abdb7d69a75f8}{cf\+\_\+pair} $\ast$$\ast$)
+\begin{DoxyCompactList}\small\item\em Frees the given map from memory. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{map_8h_aa0285b6f5038e62e35a6c935ddcd8637}{get\+\_\+num\+\_\+unique\+\_\+chars} (const int $\ast$, const size\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Returns the number of elements in the preliminary A\+S\+C\+I\+I-\/indexed array. \end{DoxyCompactList}\item 
+int \hyperlink{map_8h_a8421e3d52ecdbb1434097a6a557b75c4}{compare\+\_\+cf\+\_\+pair} (const void $\ast$, const void $\ast$)
+\begin{DoxyCompactList}\small\item\em Compares two character frequency pairs by their frequency. \end{DoxyCompactList}\item 
+void \hyperlink{map_8h_ad9dc41f97ea9277905f4c73510882ae9}{sort\+\_\+cf\+\_\+pairs} (\hyperlink{map_8h_ab7955e3b339d8b8fa70abdb7d69a75f8}{cf\+\_\+pair} $\ast$$\ast$, const size\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Sorts a character-\/frequency map by frequency in descending order. \end{DoxyCompactList}\item 
+void \hyperlink{map_8h_aefa3ed755b0211f0013c227163ca678c}{print\+\_\+cf\+\_\+pair} (const \hyperlink{map_8h_ab7955e3b339d8b8fa70abdb7d69a75f8}{cf\+\_\+pair})
+\begin{DoxyCompactList}\small\item\em Prints the contents of a single character-\/frequency pair. \end{DoxyCompactList}\item 
+void \hyperlink{map_8h_afa01c33fdefbcbeb9f4830ea4e4ea3f3}{print\+\_\+cf\+\_\+pairs} (const \hyperlink{map_8h_ab7955e3b339d8b8fa70abdb7d69a75f8}{cf\+\_\+pair} $\ast$)
+\begin{DoxyCompactList}\small\item\em Prints the contents of a character-\/frequency map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Array-\/based map implementation using character-\/frequency pairs. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{map_8h_a8421e3d52ecdbb1434097a6a557b75c4}{}\index{map.\+h@{map.\+h}!compare\+\_\+cf\+\_\+pair@{compare\+\_\+cf\+\_\+pair}}
+\index{compare\+\_\+cf\+\_\+pair@{compare\+\_\+cf\+\_\+pair}!map.\+h@{map.\+h}}
+\subsubsection[{compare\+\_\+cf\+\_\+pair}]{\setlength{\rightskip}{0pt plus 5cm}int compare\+\_\+cf\+\_\+pair (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{, }
+\item[{const void $\ast$}]{}
+\end{DoxyParamCaption}
+)}\label{map_8h_a8421e3d52ecdbb1434097a6a557b75c4}
+
+
+Compares two character frequency pairs by their frequency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the first character-\/frequency pair \\
+\hline
+{\em b} & the second character-\/frequency pair \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an int representing the greater of the two pairs 
+\end{DoxyReturn}
+\hypertarget{map_8h_afea5f53d42f3bbf26f8feb35eea40fd8}{}\index{map.\+h@{map.\+h}!free\+\_\+cf\+\_\+pairs@{free\+\_\+cf\+\_\+pairs}}
+\index{free\+\_\+cf\+\_\+pairs@{free\+\_\+cf\+\_\+pairs}!map.\+h@{map.\+h}}
+\subsubsection[{free\+\_\+cf\+\_\+pairs}]{\setlength{\rightskip}{0pt plus 5cm}void free\+\_\+cf\+\_\+pairs (
+\begin{DoxyParamCaption}
+\item[{{\bf cf\+\_\+pair} $\ast$$\ast$}]{}
+\end{DoxyParamCaption}
+)}\label{map_8h_afea5f53d42f3bbf26f8feb35eea40fd8}
+
+
+Frees the given map from memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the} & address of the map pointer to free \\
+\hline
+\end{DoxyParams}
+\hypertarget{map_8h_aa0285b6f5038e62e35a6c935ddcd8637}{}\index{map.\+h@{map.\+h}!get\+\_\+num\+\_\+unique\+\_\+chars@{get\+\_\+num\+\_\+unique\+\_\+chars}}
+\index{get\+\_\+num\+\_\+unique\+\_\+chars@{get\+\_\+num\+\_\+unique\+\_\+chars}!map.\+h@{map.\+h}}
+\subsubsection[{get\+\_\+num\+\_\+unique\+\_\+chars}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int get\+\_\+num\+\_\+unique\+\_\+chars (
+\begin{DoxyParamCaption}
+\item[{const int $\ast$}]{, }
+\item[{const size\+\_\+t}]{}
+\end{DoxyParamCaption}
+)}\label{map_8h_aa0285b6f5038e62e35a6c935ddcd8637}
+
+
+Returns the number of elements in the preliminary A\+S\+C\+I\+I-\/indexed array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & an array of integers \\
+\hline
+{\em size} & the total size of the array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of actual elements in the array 
+\end{DoxyReturn}
+\hypertarget{map_8h_aefa3ed755b0211f0013c227163ca678c}{}\index{map.\+h@{map.\+h}!print\+\_\+cf\+\_\+pair@{print\+\_\+cf\+\_\+pair}}
+\index{print\+\_\+cf\+\_\+pair@{print\+\_\+cf\+\_\+pair}!map.\+h@{map.\+h}}
+\subsubsection[{print\+\_\+cf\+\_\+pair}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+cf\+\_\+pair (
+\begin{DoxyParamCaption}
+\item[{const {\bf cf\+\_\+pair}}]{}
+\end{DoxyParamCaption}
+)}\label{map_8h_aefa3ed755b0211f0013c227163ca678c}
+
+
+Prints the contents of a single character-\/frequency pair. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & the character-\/frequency pair \\
+\hline
+\end{DoxyParams}
+\hypertarget{map_8h_afa01c33fdefbcbeb9f4830ea4e4ea3f3}{}\index{map.\+h@{map.\+h}!print\+\_\+cf\+\_\+pairs@{print\+\_\+cf\+\_\+pairs}}
+\index{print\+\_\+cf\+\_\+pairs@{print\+\_\+cf\+\_\+pairs}!map.\+h@{map.\+h}}
+\subsubsection[{print\+\_\+cf\+\_\+pairs}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+cf\+\_\+pairs (
+\begin{DoxyParamCaption}
+\item[{const {\bf cf\+\_\+pair} $\ast$}]{}
+\end{DoxyParamCaption}
+)}\label{map_8h_afa01c33fdefbcbeb9f4830ea4e4ea3f3}
+
+
+Prints the contents of a character-\/frequency map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & the map pointer to print \\
+\hline
+\end{DoxyParams}
+\hypertarget{map_8h_ad9dc41f97ea9277905f4c73510882ae9}{}\index{map.\+h@{map.\+h}!sort\+\_\+cf\+\_\+pairs@{sort\+\_\+cf\+\_\+pairs}}
+\index{sort\+\_\+cf\+\_\+pairs@{sort\+\_\+cf\+\_\+pairs}!map.\+h@{map.\+h}}
+\subsubsection[{sort\+\_\+cf\+\_\+pairs}]{\setlength{\rightskip}{0pt plus 5cm}void sort\+\_\+cf\+\_\+pairs (
+\begin{DoxyParamCaption}
+\item[{{\bf cf\+\_\+pair} $\ast$$\ast$}]{, }
+\item[{const size\+\_\+t}]{}
+\end{DoxyParamCaption}
+)}\label{map_8h_ad9dc41f97ea9277905f4c73510882ae9}
+
+
+Sorts a character-\/frequency map by frequency in descending order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & the map of character-\/frequency pairs \\
+\hline
+{\em size} & the size of the map \\
+\hline
+\end{DoxyParams}
+\hypertarget{map_8h_a7f713ddbaafdb51ac674cad518de2288}{}\index{map.\+h@{map.\+h}!word\+\_\+frequency@{word\+\_\+frequency}}
+\index{word\+\_\+frequency@{word\+\_\+frequency}!map.\+h@{map.\+h}}
+\subsubsection[{word\+\_\+frequency}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cf\+\_\+pair}$\ast$ word\+\_\+frequency (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{}
+\end{DoxyParamCaption}
+)}\label{map_8h_a7f713ddbaafdb51ac674cad518de2288}
+
+
+Allocates and returns a new map of character-\/frequency pairs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & the character string to generate the array from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a map of character frequency pairs 
+\end{DoxyReturn}

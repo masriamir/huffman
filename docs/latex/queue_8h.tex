@@ -15,9 +15,9 @@ struct \hyperlink{structqueue__t}{queue\+\_\+t}
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{queue_8h_a8839d5a027eab15d9e834d53574d3a36}{}\#define {\bfseries D\+E\+F\+\_\+\+S\+Z}~8\label{queue_8h_a8839d5a027eab15d9e834d53574d3a36}
+\hypertarget{queue_8h_a8839d5a027eab15d9e834d53574d3a36}{}\#define \hyperlink{queue_8h_a8839d5a027eab15d9e834d53574d3a36}{D\+E\+F\+\_\+\+S\+Z}~8\label{queue_8h_a8839d5a027eab15d9e834d53574d3a36}
 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em the default capacity of a queue \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
@@ -40,7 +40,7 @@ bool \hyperlink{queue_8h_a72f1443468e02db17f6bf787eaf32ff3}{offer} (\hyperlink{q
 \hyperlink{node_8h_a1c1c4438956188a85fe68f77f997b9e0}{node} $\ast$ \hyperlink{queue_8h_a213945edea8a1a426f74b515a1e37a91}{peek} (const \hyperlink{queue_8h_a22b31f8605332a4ef82c742ce3b9f44b}{queue} $\ast$)
 \begin{DoxyCompactList}\small\item\em Returns, but does not remove, the head of the queue. \end{DoxyCompactList}\item 
 void \hyperlink{queue_8h_a9d5f9415eb7c42fe1a774151c567aa8d}{print\+\_\+queue} (const \hyperlink{queue_8h_a22b31f8605332a4ef82c742ce3b9f44b}{queue} $\ast$)
-\begin{DoxyCompactList}\small\item\em Print the contents of a queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Prints the contents of a queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -93,9 +93,9 @@ Adds the given node to a queue.
 
 
 \begin{DoxyParams}{Parameters}
-{\em q} & the queue \\
+{\em q} & the queue pointer \\
 \hline
-{\em n} & the node to add \\
+{\em n} & the node pointer to add \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -114,11 +114,11 @@ Returns, but does not remove, the head of the queue.
 
 
 \begin{DoxyParams}{Parameters}
-{\em q} & the queue \\
+{\em q} & the queue pointer \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-the head of the queue 
+a pointer to the head of the queue 
 \end{DoxyReturn}
 \hypertarget{queue_8h_a3082bc39bd0a94ae008bd6435ac59849}{}\index{queue.\+h@{queue.\+h}!poll@{poll}}
 \index{poll@{poll}!queue.\+h@{queue.\+h}}
@@ -133,9 +133,12 @@ Returns and removes the head of the queue.
 
 
 \begin{DoxyParams}{Parameters}
-{\em q} & the queue \\
+{\em q} & the queue pointer \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the head of the queue 
+\end{DoxyReturn}
 \hypertarget{queue_8h_a9d5f9415eb7c42fe1a774151c567aa8d}{}\index{queue.\+h@{queue.\+h}!print\+\_\+queue@{print\+\_\+queue}}
 \index{print\+\_\+queue@{print\+\_\+queue}!queue.\+h@{queue.\+h}}
 \subsubsection[{print\+\_\+queue}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+queue (
@@ -145,11 +148,11 @@ Returns and removes the head of the queue.
 )}\label{queue_8h_a9d5f9415eb7c42fe1a774151c567aa8d}
 
 
-Print the contents of a queue. 
+Prints the contents of a queue. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em q} & the queue to print \\
+{\em q} & the queue pointer to print \\
 \hline
 \end{DoxyParams}
 \hypertarget{queue_8h_a5cadce6679980245b60795ea0b60b797}{}\index{queue.\+h@{queue.\+h}!resize\+\_\+queue@{resize\+\_\+queue}}

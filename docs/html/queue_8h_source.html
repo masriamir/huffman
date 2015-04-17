@@ -93,8 +93,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="node_8h.html">node.h</a>&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define DEF_SZ 8</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="queue_8h.html#a8839d5a027eab15d9e834d53574d3a36">   12</a></span>&#160;<span class="preprocessor">#define DEF_SZ 8 </span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structqueue__t.html">   17</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structqueue__t.html">queue_t</a> {</div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structqueue__t.html#ae332a245e06417717ef1ad4a86d4e809">   18</a></span>&#160;    <a class="code" href="structnode__t.html">node</a> **<a class="code" href="structqueue__t.html#ae332a245e06417717ef1ad4a86d4e809">arr</a>; </div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structqueue__t.html#a83a13b888f9d4ef127d706559818b779">   19</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="structqueue__t.html#a83a13b888f9d4ef127d706559818b779">size</a>; </div>
@@ -109,13 +110,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="queue_8h.html#a72f1443468e02db17f6bf787eaf32ff3">offer</a>( <a class="code" href="structqueue__t.html">queue</a> *, <a class="code" href="structnode__t.html">node</a> * );</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<a class="code" href="structnode__t.html">node</a> *<a class="code" href="queue_8h.html#a3082bc39bd0a94ae008bd6435ac59849">poll</a>( <a class="code" href="structqueue__t.html">queue</a> * );</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<a class="code" href="structnode__t.html">node</a> *<a class="code" href="queue_8h.html#a213945edea8a1a426f74b515a1e37a91">peek</a>( <span class="keyword">const</span> <a class="code" href="structqueue__t.html">queue</a> * );</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keywordtype">void</span> <a class="code" href="queue_8h.html#a9d5f9415eb7c42fe1a774151c567aa8d">print_queue</a>( <span class="keyword">const</span> <a class="code" href="structqueue__t.html">queue</a> * );</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<a class="code" href="structnode__t.html">node</a> *<a class="code" href="queue_8h.html#a3082bc39bd0a94ae008bd6435ac59849">poll</a>( <a class="code" href="structqueue__t.html">queue</a> * );</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<a class="code" href="structnode__t.html">node</a> *<a class="code" href="queue_8h.html#a213945edea8a1a426f74b515a1e37a91">peek</a>( <span class="keyword">const</span> <a class="code" href="structqueue__t.html">queue</a> * );</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keywordtype">void</span> <a class="code" href="queue_8h.html#a9d5f9415eb7c42fe1a774151c567aa8d">print_queue</a>( <span class="keyword">const</span> <a class="code" href="structqueue__t.html">queue</a> * );</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="queue_8h_html_acbd0a1fa8fbf7c4fdd830017ac60951f"><div class="ttname"><a href="queue_8h.html#acbd0a1fa8fbf7c4fdd830017ac60951f">new_queue</a></div><div class="ttdeci">queue * new_queue(void)</div><div class="ttdoc">Allocates and returns a new queue pointer. </div><div class="ttdef"><b>Definition:</b> queue.c:7</div></div>
 <div class="ttc" id="structnode__t_html"><div class="ttname"><a href="structnode__t.html">node_t</a></div><div class="ttdoc">Node struct to build a huffman tree. </div><div class="ttdef"><b>Definition:</b> node.h:14</div></div>
 <div class="ttc" id="node_8h_html"><div class="ttname"><a href="node_8h.html">node.h</a></div><div class="ttdoc">Huffman node implementation (24 bytes). </div></div>
@@ -124,7 +125,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="structqueue__t_html_a5bef0472d958627890767949d1c5d6cd"><div class="ttname"><a href="structqueue__t.html#a5bef0472d958627890767949d1c5d6cd">queue_t::cap</a></div><div class="ttdeci">size_t cap</div><div class="ttdoc">maximum capacity of the queue </div><div class="ttdef"><b>Definition:</b> queue.h:20</div></div>
 <div class="ttc" id="structqueue__t_html"><div class="ttname"><a href="structqueue__t.html">queue_t</a></div><div class="ttdoc">Array implementation of a queue of nodes. </div><div class="ttdef"><b>Definition:</b> queue.h:17</div></div>
 <div class="ttc" id="queue_8h_html_a213945edea8a1a426f74b515a1e37a91"><div class="ttname"><a href="queue_8h.html#a213945edea8a1a426f74b515a1e37a91">peek</a></div><div class="ttdeci">node * peek(const queue *)</div><div class="ttdoc">Returns, but does not remove, the head of the queue. </div><div class="ttdef"><b>Definition:</b> queue.c:81</div></div>
-<div class="ttc" id="queue_8h_html_a9d5f9415eb7c42fe1a774151c567aa8d"><div class="ttname"><a href="queue_8h.html#a9d5f9415eb7c42fe1a774151c567aa8d">print_queue</a></div><div class="ttdeci">void print_queue(const queue *)</div><div class="ttdoc">Print the contents of a queue. </div><div class="ttdef"><b>Definition:</b> queue.c:90</div></div>
+<div class="ttc" id="queue_8h_html_a9d5f9415eb7c42fe1a774151c567aa8d"><div class="ttname"><a href="queue_8h.html#a9d5f9415eb7c42fe1a774151c567aa8d">print_queue</a></div><div class="ttdeci">void print_queue(const queue *)</div><div class="ttdoc">Prints the contents of a queue. </div><div class="ttdef"><b>Definition:</b> queue.c:90</div></div>
 <div class="ttc" id="queue_8h_html_a72f1443468e02db17f6bf787eaf32ff3"><div class="ttname"><a href="queue_8h.html#a72f1443468e02db17f6bf787eaf32ff3">offer</a></div><div class="ttdeci">bool offer(queue *, node *)</div><div class="ttdoc">Adds the given node to a queue. </div><div class="ttdef"><b>Definition:</b> queue.c:53</div></div>
 <div class="ttc" id="queue_8h_html_a75dca173dc6068abc37c74b9f6b1b10c"><div class="ttname"><a href="queue_8h.html#a75dca173dc6068abc37c74b9f6b1b10c">free_queue</a></div><div class="ttdeci">void free_queue(queue **)</div><div class="ttdoc">Frees the given queue from memory. </div><div class="ttdef"><b>Definition:</b> queue.c:26</div></div>
 <div class="ttc" id="queue_8h_html_a22b31f8605332a4ef82c742ce3b9f44b"><div class="ttname"><a href="queue_8h.html#a22b31f8605332a4ef82c742ce3b9f44b">queue</a></div><div class="ttdeci">struct queue_t queue</div><div class="ttdoc">Array implementation of a queue of nodes. </div></div>
@@ -133,7 +134,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 17 2015 10:07:19 for Huffman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 17 2015 11:17:03 for Huffman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
