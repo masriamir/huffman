@@ -7,11 +7,11 @@
 
 int main ( void ) {
     char *str = "abracadabra!";
-    cf_pair *charmap = word_frequency( str );
-    print_cf_pairs( charmap );
+    cf_pair *charmap = build_charmap( str );
+    print_map( charmap );
     node *root = build_tree( charmap, 6 );
     print_tree( root );
     free_tree( &root );
-    free_cf_pairs( &charmap );
+    free_map( &charmap );
     return 0;
 }

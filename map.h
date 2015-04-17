@@ -14,7 +14,7 @@
  */
 typedef struct cf_pair_t {
     char c; ///< character
-    int freq; ///< frequency
+    unsigned int freq; ///< frequency
 } cf_pair;
 
 /**
@@ -22,13 +22,13 @@ typedef struct cf_pair_t {
  * @param str the character string to generate the array from
  * @return a map of character frequency pairs
  */
-cf_pair *word_frequency( const char * );
+cf_pair *build_charmap( const char * );
 
 /**
  * Frees the given map from memory.
- * @param the address of the map pointer to free
+ * @param map the address of the map pointer to free
  */
-void free_cf_pairs( cf_pair ** );
+void free_map( cf_pair ** );
 
 /**
  * Returns the number of elements in the preliminary ASCII-indexed array.
@@ -51,18 +51,18 @@ int compare_cf_pair( const void *, const void * );
  * @param map the map of character-frequency pairs
  * @param size the size of the map
  */
-void sort_cf_pairs( cf_pair **, const size_t );
+void sort_map( cf_pair **, const size_t );
 
 /**
  * Prints the contents of a single character-frequency pair.
  * @param entry the character-frequency pair
  */
-void print_cf_pair( const cf_pair );
+void print_entry( const cf_pair );
 
 /**
  * Prints the contents of a character-frequency map.
  * @param map the map pointer to print
  */
-void print_cf_pairs( const cf_pair * );
+void print_map( const cf_pair * );
 
 #endif

@@ -3,10 +3,10 @@
 
 #include "map.h"
 
-/* allocation */
-cf_pair *word_frequency( const char *str ) {
+cf_pair *build_charmap( const char *str ) {
     if ( str == NULL ) {
-        return NULL;
+        fprintf( stderr, "illegal access\n" );
+        exit( 1 );
     }
 
     int arr[ASCII_LENGTH] = { 0 };
@@ -16,50 +16,49 @@ cf_pair *word_frequency( const char *str ) {
         arr[ascii]++;
     }
 
-    size_t arr_size = ELEMENTS( arr );
-    size_t unique = get_num_unique_chars( arr, arr_size );
+    size_t size = ELEMENTS( arr );
+    size_t unique = get_num_unique_chars( arr, size );
 
     // allocate one extra to null-terminate array
-    cf_pair *cf_pair_arr = malloc( ( unique + 1 ) * sizeof( *cf_pair_arr ) );
-    if ( cf_pair_arr == NULL ) {
+    cf_pair *map = malloc( ( unique + 1 ) * sizeof( *map ) );
+    if ( map == NULL ) {
         fprintf( stderr, "mem error\n" );
         exit( 1 );
     }
 
-    // trim original array down to size and create cf_pair array from data
+    //TODO try to optimize loop
     for ( size_t i = 0; i < unique; i++ ) {
-        
-        for ( size_t j = 0; j < arr_size; j++ ) {
+        for ( size_t j = 0; j < size; j++ ) {
             if ( arr[j] != 0 ) {
-                cf_pair_arr[i].c = ( char ) j;
-                cf_pair_arr[i].freq = arr[j];
+                map[i].c = ( char ) j;
+                map[i].freq = arr[j];
                 arr[j] = 0;
                 break;
             }
         }
     }
 
-    // null last element
-    cf_pair_arr[unique].c = '\0';
-    cf_pair_arr[unique].freq = -1;
+    // use a null element to terminate the array
+    map[unique].c = '\0';
+    map[unique].freq = 0;
 
-    sort_cf_pairs( &cf_pair_arr, unique );
-    return cf_pair_arr;
+    sort_map( &map, unique );
+    return map;
 }
 
-void free_cf_pairs( cf_pair **cf_pair_arr ) {
-    if ( cf_pair_arr == NULL ) {
+void free_map( cf_pair **map ) {
+    if ( *map == NULL ) {
         return;
     }
 
-    free( *cf_pair_arr );
-    *cf_pair_arr = NULL;
+    free( *map );
+    *map = NULL;
 }
 
-/* util */
 unsigned int get_num_unique_chars( const int *arr, const size_t size ) {
-    if ( arr == NULL || size <= 0 ) {
-        return 0;
+    if ( arr == NULL || size < 1 ) {
+        fprintf( stderr, "illegal access\n" );
+        exit( 1 );
     }
 
     unsigned int unique = 0;
@@ -77,25 +76,26 @@ int compare_cf_pair( const void *a, const void *b ) {
     return ib->freq - ia->freq;
 }
 
-void sort_cf_pairs( cf_pair **cf_pair_arr, const size_t size ) {
-    if ( cf_pair_arr == NULL || size <= 1 ) {
-        return;
+void sort_map( cf_pair **map, const size_t size ) {
+    if ( map == NULL || size < 1 ) {
+        fprintf( stderr, "illegal access\n" );
+        exit( 1 );
     }
 
-    qsort ( *cf_pair_arr, size, sizeof( *cf_pair_arr ), compare_cf_pair );
+    qsort ( *map, size, sizeof( *map ), compare_cf_pair );
 }
 
-void print_cf_pair( const cf_pair item ) {
-    printf( "%c: %d\n", item.c, item.freq );
+void print_entry( const cf_pair entry ) {
+    printf( "%c: %d\n", entry.c, entry.freq );
 }
 
-void print_cf_pairs( const cf_pair *cf_pair_arr ) {
-    if ( cf_pair_arr == NULL ) {
-        return;
+void print_map( const cf_pair *map ) {
+    if ( map == NULL ) {
+        fprintf( stderr, "illegal access\n" );
+        exit( 1 );
     }
 
-    while ( cf_pair_arr->c != '\0' ) {
-        print_cf_pair( *cf_pair_arr );
-        cf_pair_arr++;
+    for ( size_t i = 0; map->c != '\0'; i++, map++ ) {
+        print_entry( *map );
     }
 }
