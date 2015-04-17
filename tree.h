@@ -20,4 +20,10 @@ node *build_tree( const wf_item *, const size_t );
  */
 void free_tree( node ** );
 
+/**
+ * Print the contents of a tree.
+ * @param n the root node pointer to the tree
+ */
+void print_tree( const node * );
+
 #endif

@@ -10,7 +10,7 @@ int main ( void ) {
     wf_item *charmap = word_frequency( str );
     print_wf_items( charmap );
     node *root = build_tree( charmap, 6 );
-    print_node( root );
+    print_tree( root );
     free_tree( &root );
     free_wf_items( &charmap );
     return 0;

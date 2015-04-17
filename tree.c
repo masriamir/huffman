@@ -25,7 +25,7 @@ node *build_tree( const wf_item *wf_arr, const size_t size ) {
 }
 
 void free_tree( node **n ) {
-    if ( n == NULL ) {
+    if ( *n == NULL ) {
         return;
     }
 
@@ -37,4 +37,19 @@ void free_tree( node **n ) {
     }
 
     free_node( n );
+}
+
+void print_tree( const node *n ) {
+    if ( n == NULL ) {
+        fprintf( stderr, "illegal access\n" );
+        exit( 1 );
+    }
+
+    if ( is_leaf( n ) ) {
+        print_node( n );
+    } else {
+        print_node( n );
+        print_tree( n->left );
+        print_tree( n->right );
+    }
 }
