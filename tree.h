@@ -12,7 +12,7 @@
  * @param size the number of elements in the charmap
  * @return a pointer to the root node of the tree
  */
-node *build_tree( const wf_item *, const size_t );
+node *build_tree( const cf_pair *, const size_t );
 
 /**
  * Frees the tree represented by the address of the given root node pointer

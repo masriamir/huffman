@@ -1,9 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "wf.h"
+
+#include "map.h"
 
 /* allocation */
-wf_item *word_frequency( const char *str ) {
+cf_pair *word_frequency( const char *str ) {
     if ( str == NULL ) {
         return NULL;
     }
@@ -19,19 +20,19 @@ wf_item *word_frequency( const char *str ) {
     size_t unique = get_num_unique_chars( arr, arr_size );
 
     // allocate one extra to null-terminate array
-    wf_item *wf_item_arr = malloc( ( unique + 1 ) * sizeof( *wf_item_arr ) );
-    if ( wf_item_arr == NULL ) {
+    cf_pair *cf_pair_arr = malloc( ( unique + 1 ) * sizeof( *cf_pair_arr ) );
+    if ( cf_pair_arr == NULL ) {
         fprintf( stderr, "mem error\n" );
         exit( 1 );
     }
 
-    // trim original array down to size and create wf_item array from data
+    // trim original array down to size and create cf_pair array from data
     for ( size_t i = 0; i < unique; i++ ) {
         
         for ( size_t j = 0; j < arr_size; j++ ) {
             if ( arr[j] != 0 ) {
-                wf_item_arr[i].c = ( char ) j;
-                wf_item_arr[i].freq = arr[j];
+                cf_pair_arr[i].c = ( char ) j;
+                cf_pair_arr[i].freq = arr[j];
                 arr[j] = 0;
                 break;
             }
@@ -39,20 +40,20 @@ wf_item *word_frequency( const char *str ) {
     }
 
     // null last element
-    wf_item_arr[unique].c = '\0';
-    wf_item_arr[unique].freq = -1;
+    cf_pair_arr[unique].c = '\0';
+    cf_pair_arr[unique].freq = -1;
 
-    sort_wf_items( &wf_item_arr, unique );
-    return wf_item_arr;
+    sort_cf_pairs( &cf_pair_arr, unique );
+    return cf_pair_arr;
 }
 
-void free_wf_items( wf_item **wf_item_arr ) {
-    if ( wf_item_arr == NULL ) {
+void free_cf_pairs( cf_pair **cf_pair_arr ) {
+    if ( cf_pair_arr == NULL ) {
         return;
     }
 
-    free( *wf_item_arr );
-    *wf_item_arr = NULL;
+    free( *cf_pair_arr );
+    *cf_pair_arr = NULL;
 }
 
 /* util */
@@ -70,31 +71,31 @@ unsigned int get_num_unique_chars( const int *arr, const size_t size ) {
     return unique;
 }
 
-int compare_wf_item( const void *a, const void *b ) {
-    const wf_item *ia = ( const wf_item * ) a;
-    const wf_item *ib = ( const wf_item * ) b;
+int compare_cf_pair( const void *a, const void *b ) {
+    const cf_pair *ia = ( const cf_pair * ) a;
+    const cf_pair *ib = ( const cf_pair * ) b;
     return ib->freq - ia->freq;
 }
 
-void sort_wf_items( wf_item **wf_item_arr, const size_t size ) {
-    if ( wf_item_arr == NULL || size <= 1 ) {
+void sort_cf_pairs( cf_pair **cf_pair_arr, const size_t size ) {
+    if ( cf_pair_arr == NULL || size <= 1 ) {
         return;
     }
 
-    qsort ( *wf_item_arr, size, sizeof( *wf_item_arr ), compare_wf_item );
+    qsort ( *cf_pair_arr, size, sizeof( *cf_pair_arr ), compare_cf_pair );
 }
 
-void print_wf_item( const wf_item item ) {
+void print_cf_pair( const cf_pair item ) {
     printf( "%c: %d\n", item.c, item.freq );
 }
 
-void print_wf_items( const wf_item *wf_item_arr ) {
-    if ( wf_item_arr == NULL ) {
+void print_cf_pairs( const cf_pair *cf_pair_arr ) {
+    if ( cf_pair_arr == NULL ) {
         return;
     }
 
-    while ( wf_item_arr->c != '\0' ) {
-        print_wf_item( *wf_item_arr );
-        wf_item_arr++;
+    while ( cf_pair_arr->c != '\0' ) {
+        print_cf_pair( *cf_pair_arr );
+        cf_pair_arr++;
     }
 }
