@@ -43,10 +43,7 @@ void free_tree( node **n ) {
 }
 
 void print_tree( const node *n ) {
-    if ( n == NULL ) {
-        fprintf( stderr, "illegal access\n" );
-        exit( 1 );
-    }
+    check_mem_exit( n, EX_ACCESS );
 
     if ( is_leaf( n ) ) {
         print_node( n );

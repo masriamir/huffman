@@ -6,6 +6,7 @@
 #ifndef WFREQ_H
 #define WFREQ_H
 
+#include "huffman.h"
 #include "map.h"
 
 #define ASCII_LENGTH 256 ///< number of ASCII characters

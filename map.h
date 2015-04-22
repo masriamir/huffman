@@ -8,6 +8,7 @@
 
 #include <stdbool.h>
 
+#include "huffman.h"
 #include "pair.h"
 
 /**

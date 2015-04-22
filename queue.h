@@ -7,6 +7,8 @@
 #define QUEUE_H
 
 #include <stdbool.h>
+
+#include "huffman.h"
 #include "node.h"
 
 #define DEF_SZ 8 ///< the default capacity of a queue

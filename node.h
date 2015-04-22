@@ -8,6 +8,8 @@
 
 #include <stdbool.h>
 
+#include "huffman.h"
+
 /**
  * Node struct to build a huffman tree.
  */

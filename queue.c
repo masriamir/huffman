@@ -5,19 +5,8 @@
 #include "queue.h"
 
 queue *new_queue( void ) {
-    queue *q = malloc( sizeof( *q ) );
-    if ( q == NULL ) {
-        fprintf( stderr, "mem error\n" );
-        exit( 1 );
-    }
-
-    q->arr = malloc( DEF_SZ * sizeof( *q->arr ) );
-    if ( q->arr == NULL ) {
-        fprintf( stderr, "mem error\n" );
-        free( q );
-        exit( 1 );
-    }
-
+    queue *q = new_mem( sizeof( *q ) );
+    q->arr = new_mem( DEF_SZ * sizeof( *q->arr ) );
     q->size = 0;
     q->cap = DEF_SZ;
     return q;
@@ -43,10 +32,7 @@ void free_queue( queue **q ) {
 size_t resize_queue( queue **q ) {
     size_t new_cap = ( *q )->cap * 2;
     ( *q )->arr = realloc( ( *q )->arr, new_cap * sizeof( *( *q )->arr ) );
-    if ( ( *q )->arr == NULL ) {
-        fprintf( stderr, "mem error\n" );
-        exit( 1 );
-    }
+    check_mem_exit( ( *q )->arr, EX_MEM );
     return new_cap;
 }
 
@@ -88,11 +74,7 @@ node *peek( const queue *q ) {
 }
 
 void print_queue( const queue *q ) {
-    if ( q == NULL ) {
-        fprintf( stderr, "illegal access\n" );
-        exit( 1 );
-    }
-
+    check_mem_exit( q, EX_ACCESS );
     printf( "queue[size = %zu, capacity = %zu]\n", q->size, q->cap );
     for ( size_t i = 0; i < q->size; i++ ) {
         print_node( q->arr[i] );

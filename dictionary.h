@@ -1,6 +1,7 @@
 #ifndef DICTIONARY_H
 #define DICTIONARY_H
 
+#include "huffman.h"
 #include "map.h"
 #include "node.h"
 

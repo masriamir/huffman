@@ -5,11 +5,7 @@
 #include "node.h"
 
 node *new_node( const char c, const int freq, node *left, node *right ) {
-    node *n = malloc( sizeof( *n ) );
-    if ( n == NULL ) {
-        fprintf( stderr, "mem error\n" );
-        exit( 1 );
-    }
+    node *n = new_mem( sizeof( *n ) );
 
     n->c = c;
     n->freq = freq;
@@ -29,20 +25,12 @@ void free_node( node **n ) {
 }
 
 bool is_leaf( const node *n ) {
-    if ( n == NULL ) {
-        fprintf( stderr, "illegal access\n" );
-        exit( 1 );
-    }
-
+    check_mem_exit( n, EX_ACCESS );
     return ( n->left == NULL && n->right == NULL );
 }
 
 void print_node( const node *n ) {
-    if ( n == NULL ) {
-        fprintf( stderr, "illegal access\n" );
-        exit( 1 );
-    }
-
+    check_mem_exit( n, EX_ACCESS );
     printf( "node[c = %c, freq = %d, left = %p, right = %p]\n",
             n->c, n->freq, ( void * )n->left, ( void * )n->right );
 }

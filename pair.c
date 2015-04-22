@@ -4,11 +4,7 @@
 #include "pair.h"
 
 pair *new_pair( const char c, const int freq ) {
-    pair *p = malloc( sizeof( *p ) );
-    if ( p == NULL ) {
-        fprintf( stderr, "mem error\n" );
-        exit( 1 );
-    }
+    pair *p = new_mem( sizeof( *p ) );
 
     p->c = c;
     p->freq = freq;
@@ -17,12 +13,7 @@ pair *new_pair( const char c, const int freq ) {
 }
 
 void free_pair( pair **p ) {
-    if ( *p == NULL ) {
-        return;
-    }
-
-    free( *p );
-    *p = NULL;
+    free_mem( *p );
 }
 
 int compare_freq( const void *a, const void *b ) {
@@ -32,10 +23,6 @@ int compare_freq( const void *a, const void *b ) {
 }
 
 void print_pair( const pair *p ) {
-    if ( p == NULL ) {
-        fprintf( stderr, "illegal access\n" );
-        exit( 1 );
-    }
-
+    check_mem_err( p, EX_ACCESS );
     printf( "%c: %d\n", p->c, p->freq );
 }

@@ -4,10 +4,7 @@
 #include "wfreq.h"
 
 map *build_charmap( const char *str ) {
-    if ( str == NULL ) {
-        fprintf( stderr, "illegal access\n" );
-        exit( 1 );
-    }
+    check_mem_err( str, EX_ACCESS );
 
     int arr[ASCII_LENGTH] = { 0 };
     for ( size_t i = 0; str[i] != '\0'; i++ ) {
@@ -35,11 +32,7 @@ map *build_charmap( const char *str ) {
 }
 
 unsigned int get_num_unique_chars( const int *arr ) {
-    if ( arr == NULL ) {
-        fprintf( stderr, "illegal access\n" );
-        exit( 1 );
-    }
-
+    check_mem_err( arr, EX_ACCESS );
     unsigned int unique = 0;
     for ( size_t i = 0; i < ASCII_LENGTH; i++ ) {
         if ( arr[i] != 0 ) {

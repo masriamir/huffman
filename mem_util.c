@@ -2,11 +2,12 @@
 #include <stdbool.h>
 #include <stdio.h>
 
+#include "huffman.h"
 #include "mem_util.h"
 
 void *new_mem( const size_t size ) {
     void *ptr = malloc( size );
-    check_mem_exit( ptr, "could not allocate memory" );
+    check_mem_exit( ptr, EX_MEM );
     return ptr;
 }
 
