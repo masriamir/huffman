@@ -15,7 +15,9 @@ node *build_tree( const map *m, const size_t size ) {
     while ( q->size > 1 ) {
         // pointers are being reassigned, no need to free them here
         node *left = poll( q );
+        printf( "left = [%c: %d]\n", left->c, left->freq );
         node *right = poll( q );
+        printf( "right = [%c: %d]\n", right->c, right->freq );
         node *root = new_node( '\0', left->freq + right->freq, left, right );
         offer( q, root );
     }
