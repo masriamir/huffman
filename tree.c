@@ -5,10 +5,11 @@
 #include "node.h"
 #include "queue.h"
 
-node *build_tree( const cf_pair *wf_arr, const size_t size ) {
+node *build_tree( const map *m, const size_t size ) {
     queue *q = new_queue();
     for ( size_t i = 0; i < size; i++ ) {
-        offer( q, new_node( wf_arr[i].c, wf_arr[i].freq, NULL, NULL ) );
+        offer( q, new_node( ( m->arr[i] )->c, ( m->arr[i] )->freq,
+                            NULL, NULL ) );
     }
 
     while ( q->size > 1 ) {

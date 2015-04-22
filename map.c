@@ -3,99 +3,68 @@
 
 #include "map.h"
 
-cf_pair *build_charmap( const char *str ) {
-    if ( str == NULL ) {
-        fprintf( stderr, "illegal access\n" );
-        exit( 1 );
-    }
-
-    int arr[ASCII_LENGTH] = { 0 };
-    for ( size_t i = 0; str[i] != '\0'; i++ ) {
-        // arr index is ascii value of char
-        int ascii = ( int ) str[i];
-        arr[ascii]++;
-    }
-
-    size_t size = ELEMENTS( arr );
-    size_t unique = get_num_unique_chars( arr, size );
-
-    // allocate one extra to null-terminate array
-    cf_pair *map = malloc( ( unique + 1 ) * sizeof( *map ) );
-    if ( map == NULL ) {
+map *new_map( const size_t size ) {
+    map *m = malloc( sizeof( *m ) );
+    if ( m == NULL ) {
         fprintf( stderr, "mem error\n" );
         exit( 1 );
     }
 
-    //TODO try to optimize loop
-    for ( size_t i = 0; i < unique; i++ ) {
-        for ( size_t j = 0; j < size; j++ ) {
-            if ( arr[j] != 0 ) {
-                map[i].c = ( char ) j;
-                map[i].freq = arr[j];
-                arr[j] = 0;
-                break;
-            }
-        }
+    m->arr = malloc( size * sizeof( *m->arr ) );
+    if ( m->arr == NULL ) {
+        fprintf( stderr, "mem error\n" );
+        free( m );
+        exit( 1 );
     }
 
-    // use a null element to terminate the array
-    map[unique].c = '\0';
-    map[unique].freq = 0;
-
-    sort_map( &map, unique );
-    return map;
+    m->size = 0;
+    m->cap = size;
+    return m;
 }
 
-void free_map( cf_pair **map ) {
-    if ( *map == NULL ) {
+void free_map( map **m ) {
+    if ( *m == NULL ) {
         return;
     }
 
-    free( *map );
-    *map = NULL;
+    for ( size_t i = 0; i < ( *m )->size; i++ ) {
+        free( ( *m )->arr[i] );
+        ( *m )->arr[i] = NULL;
+    }
+
+    free( ( *m )->arr );
+    ( *m )->arr = NULL;
+
+    free( *m );
+    *m = NULL;
 }
 
-unsigned int get_num_unique_chars( const int *arr, const size_t size ) {
-    if ( arr == NULL || size < 1 ) {
+bool put( map *m, pair *p ) {
+    if ( m == NULL || p == NULL ||  m->size == m->cap ) {
+        return false;
+    }
+
+    m->arr[ m->size++ ] = p;
+    return true;
+}
+
+void sort_map( map **m ) {
+    if ( *m == NULL || ( *m )->size < 1 ) {
         fprintf( stderr, "illegal access\n" );
         exit( 1 );
     }
 
-    unsigned int unique = 0;
-    for ( size_t i = 0; i < size; i++ ) {
-        if ( arr[i] != 0 ) {
-            unique++;
-        }
-    }
-    return unique;
+    qsort ( ( *m )->arr, ( *m )->size, sizeof( *( *m )->arr ), compare_freq );
 }
 
-int compare_cf_pair( const void *a, const void *b ) {
-    const cf_pair *ia = ( const cf_pair * ) a;
-    const cf_pair *ib = ( const cf_pair * ) b;
-    return ib->freq - ia->freq;
-}
-
-void sort_map( cf_pair **map, const size_t size ) {
-    if ( map == NULL || size < 1 ) {
+void print_map( const map *m ) {
+    if ( m == NULL ) {
         fprintf( stderr, "illegal access\n" );
         exit( 1 );
     }
 
-    qsort ( *map, size, sizeof( *map ), compare_cf_pair );
-}
-
-void print_entry( const cf_pair entry ) {
-    printf( "%c: %d\n", entry.c, entry.freq );
-}
-
-void print_map( const cf_pair *map ) {
-    if ( map == NULL ) {
-        fprintf( stderr, "illegal access\n" );
-        exit( 1 );
-    }
-
-    for ( size_t i = 0; map->c != '\0'; i++, map++ ) {
-        print_entry( *map );
+    printf( "map[size = %zu, capacity = %zu]\n", m->size, m->cap );
+    for ( size_t i = 0; i < m->size; i++ ) {
+        print_pair( m->arr[i] );
     }
 }
