@@ -4,11 +4,11 @@
 
 #include "queue.h"
 
-queue *new_queue( void ) {
+queue *new_queue( const size_t size ) {
     queue *q = new_mem( sizeof( *q ) );
-    q->arr = new_mem( DEF_SZ * sizeof( *q->arr ) );
+    q->arr = new_mem( size * sizeof( *q->arr ) );
     q->size = 0;
-    q->cap = DEF_SZ;
+    q->cap = size;
     return q;
 }
 
@@ -29,20 +29,9 @@ void free_queue( queue *q ) {
     q = NULL;
 }
 
-size_t resize_queue( queue **q ) {
-    size_t new_cap = ( *q )->cap * 2;
-    ( *q )->arr = realloc( ( *q )->arr, new_cap * sizeof( *( *q )->arr ) );
-    check_mem_exit( ( *q )->arr, EX_MEM );
-    return new_cap;
-}
-
 bool offer( queue *q, node *el ) {
     if ( q == NULL || el == NULL ) {
         return false;
-    }
-
-    if ( q->size + 1 == q->cap ) {
-        q->cap = resize_queue( &q );
     }
 
     q->arr[ q->size++ ] = el;
@@ -57,7 +46,7 @@ node *poll( queue *q ) {
     }
 
     node *el = q->arr[0];
-    for ( size_t i = 0; i < q->size; i++ ) {
+    for ( size_t i = 0; i < q->size - 1; i++ ) {
         q->arr[i] = q->arr[i + 1];
     }
 

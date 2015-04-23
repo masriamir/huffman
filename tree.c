@@ -6,17 +6,18 @@
 #include "queue.h"
 
 node *build_tree( const map *m ) {
-    queue *q = new_queue();
+    queue *q = new_queue( m->size );
     for ( size_t i = 0; i < m->size; i++ ) {
         offer( q, new_node( m->arr[i].c, m->arr[i].freq, NULL, NULL ) );
     }
-
+    print_queue( q );
     while ( q->size > 1 ) {
         // pointers are being reassigned, no need to free them here
         node *left = poll( q );
         node *right = poll( q );
         node *root = new_node( '\0', left->freq + right->freq, left, right );
         offer( q, root );
+        print_queue( q );
     }
 
     node *root = poll( q );

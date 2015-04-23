@@ -11,8 +11,6 @@
 #include "huffman.h"
 #include "node.h"
 
-#define DEF_SZ 8 ///< the default capacity of a queue
-
 /**
  * Array implementation of a queue of nodes.
  */
@@ -26,20 +24,13 @@ typedef struct queue_t {
  * Allocates and returns a new queue pointer.
  * @return the allocated queue pointer
  */
-queue *new_queue( void );
+queue *new_queue( const size_t );
 
 /**
  * Frees the given queue from memory.
  * @param q the queue pointer to free
  */
 void free_queue( queue * );
-
-/**
- * Resizes the given queue to twice its current capacity.
- * @param q the address of the queue pointer
- * @return the new capacity of the queue
- */
-size_t resize_queue( queue ** );
 
 /**
  * Adds the given node to a queue.
