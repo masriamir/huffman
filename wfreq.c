@@ -27,12 +27,13 @@ map *build_charmap( const char *str ) {
         }
     }
 
-    sort_map( &m );
+    sort_map( m );
     return m;
 }
 
 unsigned int get_num_unique_chars( const int *arr ) {
     check_mem_err( arr, EX_ACCESS );
+
     unsigned int unique = 0;
     for ( size_t i = 0; i < ASCII_LENGTH; i++ ) {
         if ( arr[i] != 0 ) {

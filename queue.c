@@ -12,21 +12,21 @@ queue *new_queue( void ) {
     return q;
 }
 
-void free_queue( queue **q ) {
-    if ( *q == NULL ) {
+void free_queue( queue *q ) {
+    if ( q == NULL ) {
         return;
     }
 
-    for ( size_t i = 0; i < ( *q )->size; i++ ) {
-        free( ( *q )->arr[i] );
-        ( *q )->arr[i] = NULL;
+    for ( size_t i = 0; i < q->size; i++ ) {
+        free( q->arr[i] );
+        q->arr[i] = NULL;
     }
 
-    free( ( *q )->arr );
-    ( *q )->arr = NULL;
+    free( q->arr );
+    q->arr = NULL;
 
-    free( *q );
-    *q = NULL;
+    free( q );
+    q = NULL;
 }
 
 size_t resize_queue( queue **q ) {
@@ -69,7 +69,7 @@ node *peek( const queue *q ) {
         fprintf( stderr, "illegal access\n" );
         exit( 1 );
     }
-    
+
     return q->arr[0];
 }
 

@@ -18,11 +18,10 @@
 node *build_tree( const map *, const size_t );
 
 /**
- * Frees the tree represented by the address of the given root node pointer
- * from memory.
- * @param n the address of the root node pointer to the tree
+ * Frees the given tree from memory.
+ * @param n a pointer to the root node of the tree
  */
-void free_tree( node ** );
+void free_tree( node * );
 
 /**
  * Prints the contents of a tree.

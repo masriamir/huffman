@@ -17,18 +17,12 @@ typedef struct pair_t {
 } pair;
 
 /**
- * Allocates and returns a new pair pointer.
+ * Returns a new pair struct.
  * @param c the character
  * @param freq the character's frequency
- * @return the allocated pair pointer
+ * @return the new pair struct
  */
-pair *new_pair( const char, const int );
-
-/**
- * Frees the given pair from memory.
- * @param p the address of the pair pointer to free
- */
-void free_pair( pair ** );
+pair new_pair( const char, const int );
 
 /**
  * Compares two character-frequency pairs by their frequency.
@@ -39,9 +33,9 @@ void free_pair( pair ** );
 int compare_freq( const void *, const void * );
 
 /**
- * Prints the contents of a pair.
- * @param p the pair pointer to print
+ * Prints the contents of a pair struct.
+ * @param p the pair struct
  */
-void print_pair( const pair * );
+void print_pair( const pair );
 
 #endif

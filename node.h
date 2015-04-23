@@ -32,9 +32,9 @@ node *new_node( const char, const int, node *, node * );
 
 /**
  * Frees the given node from memory.
- * @param n the address of the node pointer to free
+ * @param n the node pointer to free
  */
-void free_node( node ** );
+void free_node( node * );
 
 /**
  * Returns true if the node has no children, false otherwise.

@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
 
 #include "map.h"
@@ -13,25 +14,17 @@ map *new_map( const size_t size ) {
     return m;
 }
 
-void free_map( map **m ) {
-    if ( *m == NULL ) {
+void free_map( map *m ) {
+    if ( !check_mem( m ) ) {
         return;
     }
 
-    for ( size_t i = 0; i < ( *m )->size; i++ ) {
-        free( ( *m )->arr[i] );
-        ( *m )->arr[i] = NULL;
-    }
-
-    free( ( *m )->arr );
-    ( *m )->arr = NULL;
-
-    free( *m );
-    *m = NULL;
+    free_mem( m->arr );
+    free_mem( m );
 }
 
-bool put( map *m, pair *p ) {
-    if ( m == NULL || p == NULL ||  m->size == m->cap ) {
+bool put( map *m, const pair p ) {
+    if ( !check_mem( m ) ) {
         return false;
     }
 
@@ -39,20 +32,14 @@ bool put( map *m, pair *p ) {
     return true;
 }
 
-void sort_map( map **m ) {
-    if ( *m == NULL || ( *m )->size < 1 ) {
-        fprintf( stderr, "illegal access\n" );
-        exit( 1 );
-    }
-
-    qsort ( ( *m )->arr, ( *m )->size, sizeof( *( *m )->arr ), compare_freq );
+void sort_map( map *m ) {
+    check_mem_err( m, EX_ACCESS );
+    qsort ( m->arr, m->size, sizeof( *m->arr ), compare_freq );
 }
 
-void print_map( const map *m ) {
-    check_mem_exit( m, EX_ACCESS );
-
-    printf( "map[size = %zu, capacity = %zu]\n", m->size, m->cap );
-    for ( size_t i = 0; i < m->size; i++ ) {
-        print_pair( m->arr[i] );
+void print_map( const map m ) {
+    printf( "map[size = %zu, capacity = %zu]\n", m.size, m.cap );
+    for ( size_t i = 0; i < m.size; i++ ) {
+        print_pair( m.arr[i] );
     }
 }

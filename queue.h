@@ -30,9 +30,9 @@ queue *new_queue( void );
 
 /**
  * Frees the given queue from memory.
- * @param q the address of the queue pointer to free
+ * @param q the queue pointer to free
  */
-void free_queue( queue ** );
+void free_queue( queue * );
 
 /**
  * Resizes the given queue to twice its current capacity.

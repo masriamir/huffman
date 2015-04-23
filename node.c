@@ -15,22 +15,19 @@ node *new_node( const char c, const int freq, node *left, node *right ) {
     return n;
 }
 
-void free_node( node **n ) {
-    if ( *n == NULL ) {
-        return;
-    }
-
-    free( *n );
-    *n = NULL;
+void free_node( node *n ) {
+    free_mem( n );
 }
 
 bool is_leaf( const node *n ) {
     check_mem_exit( n, EX_ACCESS );
+
     return ( n->left == NULL && n->right == NULL );
 }
 
 void print_node( const node *n ) {
     check_mem_exit( n, EX_ACCESS );
-    printf( "node[c = %c, freq = %d, left = %p, right = %p]\n",
-            n->c, n->freq, ( void * )n->left, ( void * )n->right );
+
+    printf( "node(%p) [c = %c, freq = %d, left = %p, right = %p]\n",
+            ( void * )n, n->c, n->freq, ( void * )n->left, ( void * )n->right );
 }

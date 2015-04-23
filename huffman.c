@@ -17,16 +17,16 @@ int main ( int argc, char *argv[] ) {
 
     map *charmap = build_charmap( str );
     size_t size = charmap->size;
-    print_map( charmap );
+    print_map( *charmap );
 
     node *root = build_tree( charmap, size );
-    free_map( &charmap );
+    free_map( charmap );
     print_tree( root );
 
     dictionary *d = build_dictionary( root, size );
-    print_dictionary( d );
+    // print_dictionary( d );
 
-    free_tree( &root );
+    free_tree( root );
     free_dictionary( &d );
 
     return 0;
