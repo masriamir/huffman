@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief Queue implementation to handle nodes (224 bytes).
+ * @brief Queue implementation to handle nodes (24 bytes).
  */
 
 #ifndef QUEUE_H
