@@ -42,6 +42,24 @@ void free_dictionary( dictionary *d ) {
     free_mem( d );
 }
 
+char *get_code( const dictionary *d, const char c ) {
+    for ( size_t i = 0; i < d->size; i++ ) {
+        if ( d->arr[i].c == c ) {
+            return d->arr[i].bin;
+        }
+    }
+    return "";
+}
+
+char get_char( const dictionary *d, const char *bin ) {
+    for ( size_t i = 0; i < d->size; i++ ) {
+        if ( strcmp( d->arr[i].bin, bin ) == 0 ) {
+            return d->arr[i].c;
+        }
+    }
+    return '\0';
+}
+
 void print_dictionary( const dictionary d ) {
     printf( "dictionary[size = %zu, capacity = %zu]\n", d.size, d.cap );
     for ( size_t i = 0; i < d.size; i++ ) {
