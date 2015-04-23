@@ -95,6 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Queue implementation to handle nodes (224 bytes).  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;huffman.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="node_8h_source.html">node.h</a>&quot;</code><br />
 </div>
 <p><a href="queue_8h_source.html">Go to the source code of this file.</a></p>
@@ -124,9 +125,9 @@ Functions</h2></td></tr>
 <tr class="memitem:acbd0a1fa8fbf7c4fdd830017ac60951f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="queue_8h.html#a22b31f8605332a4ef82c742ce3b9f44b">queue</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8h.html#acbd0a1fa8fbf7c4fdd830017ac60951f">new_queue</a> (void)</td></tr>
 <tr class="memdesc:acbd0a1fa8fbf7c4fdd830017ac60951f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates and returns a new queue pointer.  <a href="#acbd0a1fa8fbf7c4fdd830017ac60951f">More...</a><br /></td></tr>
 <tr class="separator:acbd0a1fa8fbf7c4fdd830017ac60951f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75dca173dc6068abc37c74b9f6b1b10c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8h.html#a75dca173dc6068abc37c74b9f6b1b10c">free_queue</a> (<a class="el" href="queue_8h.html#a22b31f8605332a4ef82c742ce3b9f44b">queue</a> **)</td></tr>
-<tr class="memdesc:a75dca173dc6068abc37c74b9f6b1b10c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the given queue from memory.  <a href="#a75dca173dc6068abc37c74b9f6b1b10c">More...</a><br /></td></tr>
-<tr class="separator:a75dca173dc6068abc37c74b9f6b1b10c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bddbde277af96bf1ff3f9a5a38979cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8h.html#a9bddbde277af96bf1ff3f9a5a38979cc">free_queue</a> (<a class="el" href="queue_8h.html#a22b31f8605332a4ef82c742ce3b9f44b">queue</a> *)</td></tr>
+<tr class="memdesc:a9bddbde277af96bf1ff3f9a5a38979cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the given queue from memory.  <a href="#a9bddbde277af96bf1ff3f9a5a38979cc">More...</a><br /></td></tr>
+<tr class="separator:a9bddbde277af96bf1ff3f9a5a38979cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cadce6679980245b60795ea0b60b797"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8h.html#a5cadce6679980245b60795ea0b60b797">resize_queue</a> (<a class="el" href="queue_8h.html#a22b31f8605332a4ef82c742ce3b9f44b">queue</a> **)</td></tr>
 <tr class="memdesc:a5cadce6679980245b60795ea0b60b797"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the given queue to twice its current capacity.  <a href="#a5cadce6679980245b60795ea0b60b797">More...</a><br /></td></tr>
 <tr class="separator:a5cadce6679980245b60795ea0b60b797"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,6 +140,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a213945edea8a1a426f74b515a1e37a91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8h.html#a213945edea8a1a426f74b515a1e37a91">peek</a> (const <a class="el" href="queue_8h.html#a22b31f8605332a4ef82c742ce3b9f44b">queue</a> *)</td></tr>
 <tr class="memdesc:a213945edea8a1a426f74b515a1e37a91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns, but does not remove, the head of the queue.  <a href="#a213945edea8a1a426f74b515a1e37a91">More...</a><br /></td></tr>
 <tr class="separator:a213945edea8a1a426f74b515a1e37a91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30eea4f4a82e5e6d652d5e808978f7aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8h.html#a30eea4f4a82e5e6d652d5e808978f7aa">sort_queue</a> (<a class="el" href="queue_8h.html#a22b31f8605332a4ef82c742ce3b9f44b">queue</a> *)</td></tr>
+<tr class="memdesc:a30eea4f4a82e5e6d652d5e808978f7aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts a queue by each node's frequency in descending order.  <a href="#a30eea4f4a82e5e6d652d5e808978f7aa">More...</a><br /></td></tr>
+<tr class="separator:a30eea4f4a82e5e6d652d5e808978f7aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d5f9415eb7c42fe1a774151c567aa8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8h.html#a9d5f9415eb7c42fe1a774151c567aa8d">print_queue</a> (const <a class="el" href="queue_8h.html#a22b31f8605332a4ef82c742ce3b9f44b">queue</a> *)</td></tr>
 <tr class="memdesc:a9d5f9415eb7c42fe1a774151c567aa8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the contents of a queue.  <a href="#a9d5f9415eb7c42fe1a774151c567aa8d">More...</a><br /></td></tr>
 <tr class="separator:a9d5f9415eb7c42fe1a774151c567aa8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,14 +150,14 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Queue implementation to handle nodes (224 bytes). </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a75dca173dc6068abc37c74b9f6b1b10c"></a>
+<a class="anchor" id="a9bddbde277af96bf1ff3f9a5a38979cc"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void free_queue </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="queue_8h.html#a22b31f8605332a4ef82c742ce3b9f44b">queue</a> **&#160;</td>
+          <td class="paramtype"><a class="el" href="queue_8h.html#a22b31f8605332a4ef82c742ce3b9f44b">queue</a> *&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -163,7 +167,7 @@ Functions</h2></td></tr>
 <p>Frees the given queue from memory. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">q</td><td>the address of the queue pointer to free </td></tr>
+    <tr><td class="paramname">q</td><td>the queue pointer to free </td></tr>
   </table>
   </dd>
 </dl>
@@ -324,10 +328,34 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a30eea4f4a82e5e6d652d5e808978f7aa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sort_queue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="queue_8h.html#a22b31f8605332a4ef82c742ce3b9f44b">queue</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sorts a queue by each node's frequency in descending order. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">q</td><td>a pointer to a queue of nodes </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 17 2015 11:17:03 for Huffman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 23 2015 12:20:23 for Huffman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

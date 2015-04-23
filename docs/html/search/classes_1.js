@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['node_5ft',['node_t',['../structnode__t.html',1,'']]]
+  ['dictionary_5ft',['dictionary_t',['../structdictionary__t.html',1,'']]]
 ];

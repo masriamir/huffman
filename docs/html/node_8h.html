@@ -94,6 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Huffman node implementation (24 bytes).  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;huffman.h&quot;</code><br />
 </div>
 <p><a href="node_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -115,9 +116,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a5ee37dda1ea8d5bf443f87599dd145ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="node_8h.html#a5ee37dda1ea8d5bf443f87599dd145ac">new_node</a> (const char, const int, <a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *, <a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *)</td></tr>
 <tr class="memdesc:a5ee37dda1ea8d5bf443f87599dd145ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates and returns a new node pointer.  <a href="#a5ee37dda1ea8d5bf443f87599dd145ac">More...</a><br /></td></tr>
 <tr class="separator:a5ee37dda1ea8d5bf443f87599dd145ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b57940e26d1048f921901492443f67c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="node_8h.html#a7b57940e26d1048f921901492443f67c">free_node</a> (<a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> **)</td></tr>
-<tr class="memdesc:a7b57940e26d1048f921901492443f67c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the given node from memory.  <a href="#a7b57940e26d1048f921901492443f67c">More...</a><br /></td></tr>
-<tr class="separator:a7b57940e26d1048f921901492443f67c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1960dc2fe9e64cab17dae7eeb89bb8a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="node_8h.html#a1960dc2fe9e64cab17dae7eeb89bb8a3">free_node</a> (<a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *)</td></tr>
+<tr class="memdesc:a1960dc2fe9e64cab17dae7eeb89bb8a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the given node from memory.  <a href="#a1960dc2fe9e64cab17dae7eeb89bb8a3">More...</a><br /></td></tr>
+<tr class="separator:a1960dc2fe9e64cab17dae7eeb89bb8a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29c6a864c3b97a4953c098ba04970f37"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="node_8h.html#a29c6a864c3b97a4953c098ba04970f37">compare_node</a> (const void *, const void *)</td></tr>
+<tr class="memdesc:a29c6a864c3b97a4953c098ba04970f37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two nodes by their frequency.  <a href="#a29c6a864c3b97a4953c098ba04970f37">More...</a><br /></td></tr>
+<tr class="separator:a29c6a864c3b97a4953c098ba04970f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a395a1095daa9eb12d805370638483424"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="node_8h.html#a395a1095daa9eb12d805370638483424">is_leaf</a> (const <a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *)</td></tr>
 <tr class="memdesc:a395a1095daa9eb12d805370638483424"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the node has no children, false otherwise.  <a href="#a395a1095daa9eb12d805370638483424">More...</a><br /></td></tr>
 <tr class="separator:a395a1095daa9eb12d805370638483424"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,14 +132,50 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Huffman node implementation (24 bytes). </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a7b57940e26d1048f921901492443f67c"></a>
+<a class="anchor" id="a29c6a864c3b97a4953c098ba04970f37"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int compare_node </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compares two nodes by their frequency. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>the first node </td></tr>
+    <tr><td class="paramname">b</td><td>the second node </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>an int representing the greater of the two nodes </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1960dc2fe9e64cab17dae7eeb89bb8a3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void free_node </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> **&#160;</td>
+          <td class="paramtype"><a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -145,7 +185,7 @@ Functions</h2></td></tr>
 <p>Frees the given node from memory. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">n</td><td>the address of the node pointer to free </td></tr>
+    <tr><td class="paramname">n</td><td>the node pointer to free </td></tr>
   </table>
   </dd>
 </dl>
@@ -254,7 +294,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 17 2015 11:17:03 for Huffman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 23 2015 12:20:23 for Huffman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

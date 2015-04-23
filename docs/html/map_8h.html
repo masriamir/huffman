@@ -84,7 +84,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -94,104 +93,54 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>Array-based map implementation using character-frequency pairs.  
 <a href="#details">More...</a></p>
-
+<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;huffman.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="pair_8h_source.html">pair.h</a>&quot;</code><br />
+</div>
 <p><a href="map_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcf__pair__t.html">cf_pair_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Character-frequency pair struct used to build a map.  <a href="structcf__pair__t.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmap__t.html">map_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array implementation of a map of character-frequency pairs.  <a href="structmap__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a6c61effb25be9e803a462b22e1b23413"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6c61effb25be9e803a462b22e1b23413"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#a6c61effb25be9e803a462b22e1b23413">ASCII_LENGTH</a>&#160;&#160;&#160;256</td></tr>
-<tr class="memdesc:a6c61effb25be9e803a462b22e1b23413"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of ASCII characters <br /></td></tr>
-<tr class="separator:a6c61effb25be9e803a462b22e1b23413"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d79910fb5dded9534508894fdad0577"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5d79910fb5dded9534508894fdad0577"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#a5d79910fb5dded9534508894fdad0577">ELEMENTS</a>(x)&#160;&#160;&#160;( sizeof( x ) / sizeof( x[0] ) )</td></tr>
-<tr class="memdesc:a5d79910fb5dded9534508894fdad0577"><td class="mdescLeft">&#160;</td><td class="mdescRight">length of an array <br /></td></tr>
-<tr class="separator:a5d79910fb5dded9534508894fdad0577"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ab7955e3b339d8b8fa70abdb7d69a75f8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab7955e3b339d8b8fa70abdb7d69a75f8"></a>
-typedef struct <a class="el" href="structcf__pair__t.html">cf_pair_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#ab7955e3b339d8b8fa70abdb7d69a75f8">cf_pair</a></td></tr>
-<tr class="memdesc:ab7955e3b339d8b8fa70abdb7d69a75f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Character-frequency pair struct used to build a map. <br /></td></tr>
-<tr class="separator:ab7955e3b339d8b8fa70abdb7d69a75f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cb3eb8a3c78017d53696b6b9f8eb352"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2cb3eb8a3c78017d53696b6b9f8eb352"></a>
+typedef struct <a class="el" href="structmap__t.html">map_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#a2cb3eb8a3c78017d53696b6b9f8eb352">map</a></td></tr>
+<tr class="memdesc:a2cb3eb8a3c78017d53696b6b9f8eb352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array implementation of a map of character-frequency pairs. <br /></td></tr>
+<tr class="separator:a2cb3eb8a3c78017d53696b6b9f8eb352"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7f713ddbaafdb51ac674cad518de2288"><td class="memItemLeft" align="right" valign="top"><a class="el" href="map_8h.html#ab7955e3b339d8b8fa70abdb7d69a75f8">cf_pair</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#a7f713ddbaafdb51ac674cad518de2288">word_frequency</a> (const char *)</td></tr>
-<tr class="memdesc:a7f713ddbaafdb51ac674cad518de2288"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates and returns a new map of character-frequency pairs.  <a href="#a7f713ddbaafdb51ac674cad518de2288">More...</a><br /></td></tr>
-<tr class="separator:a7f713ddbaafdb51ac674cad518de2288"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afea5f53d42f3bbf26f8feb35eea40fd8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#afea5f53d42f3bbf26f8feb35eea40fd8">free_cf_pairs</a> (<a class="el" href="map_8h.html#ab7955e3b339d8b8fa70abdb7d69a75f8">cf_pair</a> **)</td></tr>
-<tr class="memdesc:afea5f53d42f3bbf26f8feb35eea40fd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the given map from memory.  <a href="#afea5f53d42f3bbf26f8feb35eea40fd8">More...</a><br /></td></tr>
-<tr class="separator:afea5f53d42f3bbf26f8feb35eea40fd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0285b6f5038e62e35a6c935ddcd8637"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#aa0285b6f5038e62e35a6c935ddcd8637">get_num_unique_chars</a> (const int *, const size_t)</td></tr>
-<tr class="memdesc:aa0285b6f5038e62e35a6c935ddcd8637"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements in the preliminary ASCII-indexed array.  <a href="#aa0285b6f5038e62e35a6c935ddcd8637">More...</a><br /></td></tr>
-<tr class="separator:aa0285b6f5038e62e35a6c935ddcd8637"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8421e3d52ecdbb1434097a6a557b75c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#a8421e3d52ecdbb1434097a6a557b75c4">compare_cf_pair</a> (const void *, const void *)</td></tr>
-<tr class="memdesc:a8421e3d52ecdbb1434097a6a557b75c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two character frequency pairs by their frequency.  <a href="#a8421e3d52ecdbb1434097a6a557b75c4">More...</a><br /></td></tr>
-<tr class="separator:a8421e3d52ecdbb1434097a6a557b75c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9dc41f97ea9277905f4c73510882ae9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#ad9dc41f97ea9277905f4c73510882ae9">sort_cf_pairs</a> (<a class="el" href="map_8h.html#ab7955e3b339d8b8fa70abdb7d69a75f8">cf_pair</a> **, const size_t)</td></tr>
-<tr class="memdesc:ad9dc41f97ea9277905f4c73510882ae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts a character-frequency map by frequency in descending order.  <a href="#ad9dc41f97ea9277905f4c73510882ae9">More...</a><br /></td></tr>
-<tr class="separator:ad9dc41f97ea9277905f4c73510882ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefa3ed755b0211f0013c227163ca678c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#aefa3ed755b0211f0013c227163ca678c">print_cf_pair</a> (const <a class="el" href="map_8h.html#ab7955e3b339d8b8fa70abdb7d69a75f8">cf_pair</a>)</td></tr>
-<tr class="memdesc:aefa3ed755b0211f0013c227163ca678c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the contents of a single character-frequency pair.  <a href="#aefa3ed755b0211f0013c227163ca678c">More...</a><br /></td></tr>
-<tr class="separator:aefa3ed755b0211f0013c227163ca678c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa01c33fdefbcbeb9f4830ea4e4ea3f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#afa01c33fdefbcbeb9f4830ea4e4ea3f3">print_cf_pairs</a> (const <a class="el" href="map_8h.html#ab7955e3b339d8b8fa70abdb7d69a75f8">cf_pair</a> *)</td></tr>
-<tr class="memdesc:afa01c33fdefbcbeb9f4830ea4e4ea3f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the contents of a character-frequency map.  <a href="#afa01c33fdefbcbeb9f4830ea4e4ea3f3">More...</a><br /></td></tr>
-<tr class="separator:afa01c33fdefbcbeb9f4830ea4e4ea3f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84d68990a25e3343be8935c03aa0db4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="map_8h.html#a2cb3eb8a3c78017d53696b6b9f8eb352">map</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#a84d68990a25e3343be8935c03aa0db4f">new_map</a> (const size_t)</td></tr>
+<tr class="memdesc:a84d68990a25e3343be8935c03aa0db4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates and returns a new map pointer.  <a href="#a84d68990a25e3343be8935c03aa0db4f">More...</a><br /></td></tr>
+<tr class="separator:a84d68990a25e3343be8935c03aa0db4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85062c6584910346ede17ccca3b187ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#a85062c6584910346ede17ccca3b187ee">free_map</a> (<a class="el" href="map_8h.html#a2cb3eb8a3c78017d53696b6b9f8eb352">map</a> *)</td></tr>
+<tr class="memdesc:a85062c6584910346ede17ccca3b187ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the given map from memory.  <a href="#a85062c6584910346ede17ccca3b187ee">More...</a><br /></td></tr>
+<tr class="separator:a85062c6584910346ede17ccca3b187ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a772b47ce2eaa792a2f6c820167d71590"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#a772b47ce2eaa792a2f6c820167d71590">put</a> (<a class="el" href="map_8h.html#a2cb3eb8a3c78017d53696b6b9f8eb352">map</a> *, const <a class="el" href="pair_8h.html#a62ed8feef70cd350d42bd1ff87f520d9">pair</a>)</td></tr>
+<tr class="memdesc:a772b47ce2eaa792a2f6c820167d71590"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a new pair into the given map.  <a href="#a772b47ce2eaa792a2f6c820167d71590">More...</a><br /></td></tr>
+<tr class="separator:a772b47ce2eaa792a2f6c820167d71590"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf5ff744b417ea978767fb846bd6ffc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#aaf5ff744b417ea978767fb846bd6ffc4">sort_map</a> (<a class="el" href="map_8h.html#a2cb3eb8a3c78017d53696b6b9f8eb352">map</a> *)</td></tr>
+<tr class="memdesc:aaf5ff744b417ea978767fb846bd6ffc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts a character-frequency map by frequency in descending order.  <a href="#aaf5ff744b417ea978767fb846bd6ffc4">More...</a><br /></td></tr>
+<tr class="separator:aaf5ff744b417ea978767fb846bd6ffc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaac3e4c1397feabd5cbfac5196a8b76c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#aaac3e4c1397feabd5cbfac5196a8b76c">print_map</a> (const <a class="el" href="map_8h.html#a2cb3eb8a3c78017d53696b6b9f8eb352">map</a>)</td></tr>
+<tr class="memdesc:aaac3e4c1397feabd5cbfac5196a8b76c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the contents of a character-frequency map.  <a href="#aaac3e4c1397feabd5cbfac5196a8b76c">More...</a><br /></td></tr>
+<tr class="separator:aaac3e4c1397feabd5cbfac5196a8b76c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Array-based map implementation using character-frequency pairs. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a8421e3d52ecdbb1434097a6a557b75c4"></a>
+<a class="anchor" id="a85062c6584910346ede17ccca3b187ee"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int compare_cf_pair </td>
+          <td class="memname">void free_map </td>
           <td>(</td>
-          <td class="paramtype">const void *&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const void *&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Compares two character frequency pairs by their frequency. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a</td><td>the first character-frequency pair </td></tr>
-    <tr><td class="paramname">b</td><td>the second character-frequency pair </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>an int representing the greater of the two pairs </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="afea5f53d42f3bbf26f8feb35eea40fd8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void free_cf_pairs </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="map_8h.html#ab7955e3b339d8b8fa70abdb7d69a75f8">cf_pair</a> **&#160;</td>
+          <td class="paramtype"><a class="el" href="map_8h.html#a2cb3eb8a3c78017d53696b6b9f8eb352">map</a> *&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -201,81 +150,46 @@ Functions</h2></td></tr>
 <p>Frees the given map from memory. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">the</td><td>address of the map pointer to free </td></tr>
+    <tr><td class="paramname">map</td><td>the map pointer to free </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="aa0285b6f5038e62e35a6c935ddcd8637"></a>
+<a class="anchor" id="a84d68990a25e3343be8935c03aa0db4f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int get_num_unique_chars </td>
+          <td class="memname"><a class="el" href="map_8h.html#a2cb3eb8a3c78017d53696b6b9f8eb352">map</a>* new_map </td>
           <td>(</td>
-          <td class="paramtype">const int *&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">const size_t&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the number of elements in the preliminary ASCII-indexed array. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">arr</td><td>an array of integers </td></tr>
-    <tr><td class="paramname">size</td><td>the total size of the array </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the number of actual elements in the array </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="aefa3ed755b0211f0013c227163ca678c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void print_cf_pair </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="map_8h.html#ab7955e3b339d8b8fa70abdb7d69a75f8">cf_pair</a>&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Prints the contents of a single character-frequency pair. </p>
+<p>Allocates and returns a new map pointer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">entry</td><td>the character-frequency pair </td></tr>
+    <tr><td class="paramname">size</td><td>the fixed size of the map </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>the allocated map pointer </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="afa01c33fdefbcbeb9f4830ea4e4ea3f3"></a>
+<a class="anchor" id="aaac3e4c1397feabd5cbfac5196a8b76c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void print_cf_pairs </td>
+          <td class="memname">void print_map </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="map_8h.html#ab7955e3b339d8b8fa70abdb7d69a75f8">cf_pair</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="map_8h.html#a2cb3eb8a3c78017d53696b6b9f8eb352">map</a>&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -285,27 +199,27 @@ Functions</h2></td></tr>
 <p>Prints the contents of a character-frequency map. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">map</td><td>the map pointer to print </td></tr>
+    <tr><td class="paramname">map</td><td>the map struct to print </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="ad9dc41f97ea9277905f4c73510882ae9"></a>
+<a class="anchor" id="a772b47ce2eaa792a2f6c820167d71590"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void sort_cf_pairs </td>
+          <td class="memname">bool put </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="map_8h.html#ab7955e3b339d8b8fa70abdb7d69a75f8">cf_pair</a> **&#160;</td>
+          <td class="paramtype"><a class="el" href="map_8h.html#a2cb3eb8a3c78017d53696b6b9f8eb352">map</a> *&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramtype">const <a class="el" href="pair_8h.html#a62ed8feef70cd350d42bd1ff87f520d9">pair</a>&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -316,46 +230,46 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sorts a character-frequency map by frequency in descending order. </p>
+<p>Inserts a new pair into the given map. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">map</td><td>the map of character-frequency pairs </td></tr>
-    <tr><td class="paramname">size</td><td>the size of the map </td></tr>
+    <tr><td class="paramname">map</td><td>the map pointer </td></tr>
+    <tr><td class="paramname">pair</td><td>the pair struct to insert </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful, false otherwise </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a7f713ddbaafdb51ac674cad518de2288"></a>
+<a class="anchor" id="aaf5ff744b417ea978767fb846bd6ffc4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="map_8h.html#ab7955e3b339d8b8fa70abdb7d69a75f8">cf_pair</a>* word_frequency </td>
+          <td class="memname">void sort_map </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="map_8h.html#a2cb3eb8a3c78017d53696b6b9f8eb352">map</a> *&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Allocates and returns a new map of character-frequency pairs. </p>
+<p>Sorts a character-frequency map by frequency in descending order. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>the character string to generate the array from </td></tr>
+    <tr><td class="paramname">map</td><td>a pointer to a map of character-frequency pairs </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a map of character frequency pairs </dd></dl>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 17 2015 11:17:03 for Huffman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 23 2015 12:20:23 for Huffman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
