@@ -4,25 +4,20 @@
 #include "huffman.h"
 #include "map.h"
 #include "node.h"
+#include "code.h"
 
-typedef struct code_t {
-    char c;
-    char *bin;
-} code;
+#define MAX_BUF_LEN 256
 
 typedef struct dictionary_t {
-    code **arr;
+    code *arr;
     size_t size;
     size_t cap;
 } dictionary;
 
-code *new_code( const char, char * );
-void free_code( code ** );
-void print_code( const code * );
 dictionary *build_dictionary( const node *, const size_t );
 void build( dictionary *, const node *, char * );
 dictionary *new_dictionary( const size_t );
-void free_dictionary( dictionary ** );
-void print_dictionary( const dictionary * );
+void free_dictionary( dictionary * );
+void print_dictionary( const dictionary );
 
 #endif

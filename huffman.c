@@ -22,11 +22,11 @@ int main ( int argc, char *argv[] ) {
     print_tree( root );
 
     dictionary *d = build_dictionary( root, charmap->size );
-    // print_dictionary( d );
+    print_dictionary( *d );
 
     free_map( charmap );
     free_tree( root );
-    free_dictionary( &d );
+    free_dictionary( d );
 
     return 0;
 }
