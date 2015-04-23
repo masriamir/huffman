@@ -19,6 +19,12 @@ void free_node( node *n ) {
     free_mem( n );
 }
 
+int compare_node( const void *a, const void *b ) {
+    const node *ia = *( const node ** ) a;
+    const node *ib = *( const node ** ) b;
+    return ib->freq - ia->freq;
+}
+
 bool is_leaf( const node *n ) {
     check_mem_exit( n, EX_ACCESS );
 

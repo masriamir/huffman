@@ -46,6 +46,7 @@ bool offer( queue *q, node *el ) {
     }
 
     q->arr[ q->size++ ] = el;
+    sort_queue( q );
     return true;
 }
 
@@ -71,6 +72,11 @@ node *peek( const queue *q ) {
     }
 
     return q->arr[0];
+}
+
+void sort_queue( queue *q ) {
+    check_mem_err( q, EX_ACCESS );
+    qsort ( q->arr, q->size, sizeof( *q->arr ), compare_node );
 }
 
 void print_queue( const queue *q ) {

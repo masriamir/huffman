@@ -37,6 +37,14 @@ node *new_node( const char, const int, node *, node * );
 void free_node( node * );
 
 /**
+ * Compares two nodes by their frequency.
+ * @param a the first node
+ * @param b the second node
+ * @return an int representing the greater of the two nodes
+ */
+int compare_node( const void *, const void * );
+
+/**
  * Returns true if the node has no children, false otherwise.
  * @param n the node pointer to check
  * @return true if node is a leaf, false otherwise

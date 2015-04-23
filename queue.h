@@ -64,6 +64,12 @@ node *poll( queue * );
 node *peek( const queue * );
 
 /**
+ * Sorts a queue by each node's frequency in descending order.
+ * @param q a pointer to a queue of nodes
+ */
+void sort_queue( queue * );
+
+/**
  * Prints the contents of a queue.
  * @param q the queue pointer to print
  */
