@@ -21,10 +21,11 @@ typedef struct queue_t {
 } queue;
 
 /**
- * Allocates and returns a new queue pointer.
- * @return the allocated queue pointer
+ * Returns a new queue struct.
+ * @param size the size of the queue
+ * @return the new queue struct
  */
-queue *new_queue( const size_t );
+queue new_queue( const size_t );
 
 /**
  * Frees the given queue from memory.
@@ -62,8 +63,8 @@ void sort_queue( queue * );
 
 /**
  * Prints the contents of a queue.
- * @param q the queue pointer to print
+ * @param q the queue struct to print
  */
-void print_queue( const queue * );
+void print_queue( const queue );
 
 #endif
