@@ -15,7 +15,7 @@
  * @param size the number of elements in the charmap
  * @return a pointer to the root node of the tree
  */
-node *build_tree( const map *, const size_t );
+node *build_tree( const map * );
 
 /**
  * Frees the given tree from memory.

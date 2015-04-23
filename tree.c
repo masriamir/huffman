@@ -5,9 +5,9 @@
 #include "node.h"
 #include "queue.h"
 
-node *build_tree( const map *m, const size_t size ) {
+node *build_tree( const map *m ) {
     queue *q = new_queue();
-    for ( size_t i = 0; i < size; i++ ) {
+    for ( size_t i = 0; i < m->size; i++ ) {
         offer( q, new_node( ( m->arr[i] ).c, ( m->arr[i] ).freq,
                             NULL, NULL ) );
     }
