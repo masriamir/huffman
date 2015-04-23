@@ -22,7 +22,7 @@ void free_node( node *n ) {
 int compare_node( const void *a, const void *b ) {
     const node *ia = *( const node ** ) a;
     const node *ib = *( const node ** ) b;
-    return ib->freq - ia->freq;
+    return ia->freq - ib->freq;
 }
 
 bool is_leaf( const node *n ) {
