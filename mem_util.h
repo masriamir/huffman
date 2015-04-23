@@ -6,8 +6,11 @@
 void *new_mem( const size_t );
 void free_mem( void * );
 
-bool check_mem( const void * );
-bool check_mem_err( const void *, const char * );
-void check_mem_exit( const void *, const char * );
+bool invalid_mem( const void * );
+bool invalid_mem_err( const void *, const char * );
+void invalid_mem_exit( const void *, const char * );
+
+void error( const char * );
+void error_exit( const char * );
 
 #endif

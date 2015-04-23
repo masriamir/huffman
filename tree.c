@@ -8,7 +8,10 @@
 node *build_tree( const map *m ) {
     queue q = new_queue( m->size );
     for ( size_t i = 0; i < m->size; i++ ) {
-        offer( &q, new_node( m->arr[i].c, m->arr[i].freq, NULL, NULL ) );
+        node *n = new_node( m->arr[i].c, m->arr[i].freq, NULL, NULL );
+        if ( !offer( &q, n ) ) {
+            error_exit( EX_ACCESS );
+        }
     }
 
     while ( q.size > 1 ) {
@@ -16,7 +19,9 @@ node *build_tree( const map *m ) {
         node *left = poll( &q );
         node *right = poll( &q );
         node *root = new_node( '\0', left->freq + right->freq, left, right );
-        offer( &q, root );
+        if ( !offer( &q, root ) ) {
+            error_exit( EX_ACCESS );
+        }
     }
 
     node *root = poll( &q );
@@ -25,7 +30,8 @@ node *build_tree( const map *m ) {
 }
 
 void free_tree( node *n ) {
-    if ( !check_mem( n ) ) {
+    // check needed due to recursive frees
+    if ( invalid_mem( n ) ) {
         return;
     }
 
@@ -35,7 +41,7 @@ void free_tree( node *n ) {
 }
 
 void print_tree( const node *n ) {
-    check_mem_exit( n, EX_ACCESS );
+    invalid_mem_exit( n, EX_ACCESS );
 
     if ( is_leaf( n ) ) {
         print_node( n );

@@ -15,16 +15,12 @@ map *new_map( const size_t size ) {
 }
 
 void free_map( map *m ) {
-    if ( !check_mem( m ) ) {
-        return;
-    }
-
     free_mem( m->arr );
     free_mem( m );
 }
 
 bool put( map *m, const pair p ) {
-    if ( !check_mem( m ) ) {
+    if ( invalid_mem( m ) ) {
         return false;
     }
 
@@ -33,7 +29,7 @@ bool put( map *m, const pair p ) {
 }
 
 void sort_map( map *m ) {
-    check_mem_err( m, EX_ACCESS );
+    invalid_mem_exit( m, EX_ACCESS );
     qsort ( m->arr, m->size, sizeof( *m->arr ), compare_freq );
 }
 

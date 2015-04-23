@@ -6,17 +6,15 @@
 
 queue new_queue( const size_t size ) {
     queue q;
+
     q.arr = new_mem( size * sizeof( *q.arr ) );
     q.size = 0;
     q.cap = size;
+
     return q;
 }
 
 void free_queue( queue *q ) {
-    if ( q == NULL ) {
-        return;
-    }
-
     for ( size_t i = 0; i < q->size; i++ ) {
         free_mem( q->arr[i] );
     }
@@ -25,7 +23,7 @@ void free_queue( queue *q ) {
 }
 
 bool offer( queue *q, node *el ) {
-    if ( q == NULL || el == NULL ) {
+    if ( invalid_mem( q ) || invalid_mem( el ) ) {
         return false;
     }
 
@@ -35,9 +33,9 @@ bool offer( queue *q, node *el ) {
 }
 
 node *poll( queue *q ) {
-    if ( q == NULL || q->size == 0 ) {
-        fprintf( stderr, "illegal access\n" );
-        exit( 1 );
+    invalid_mem_exit( q, EX_ACCESS );
+    if ( q->size <= 0 ) {
+        error_exit( EX_ACCESS );
     }
 
     node *el = q->arr[0];
@@ -50,16 +48,16 @@ node *poll( queue *q ) {
 }
 
 node *peek( const queue *q ) {
-    if ( q == NULL || q->size == 0 ) {
-        fprintf( stderr, "illegal access\n" );
-        exit( 1 );
+    invalid_mem_exit( q, EX_ACCESS );
+    if ( q->size <= 0 ) {
+        error_exit( EX_ACCESS );
     }
 
     return q->arr[0];
 }
 
 void sort_queue( queue *q ) {
-    check_mem_err( q, EX_ACCESS );
+    invalid_mem_exit( q, EX_ACCESS );
     qsort ( q->arr, q->size, sizeof( *q->arr ), compare_node );
 }
 

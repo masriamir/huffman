@@ -7,7 +7,7 @@
 
 void *new_mem( const size_t size ) {
     void *ptr = malloc( size );
-    check_mem_exit( ptr, EX_MEM );
+    invalid_mem_exit( ptr, EX_MEM );
     return ptr;
 }
 
@@ -20,23 +20,32 @@ void free_mem( void *ptr ) {
     }
 }
 
-bool check_mem( const void *ptr ) {
+bool invalid_mem( const void *ptr ) {
     if ( ptr == NULL ) {
-        return false;
+        return true;
     }
-    return true;
+    return false;
 }
 
-bool check_mem_err( const void *ptr, const char *str ) {
-    if ( !check_mem( ptr ) ) {
-        fprintf( stderr, "Error: %s\n", str );
-        return false;
+bool invalid_mem_err( const void *ptr, const char *str ) {
+    if ( invalid_mem( ptr ) ) {
+        error( str );
+        return true;
     }
-    return true;
+    return false;
 }
 
-void check_mem_exit( const void *ptr, const char *str ) {
-    if ( !check_mem_err( ptr, str ) ) {
+void invalid_mem_exit( const void *ptr, const char *str ) {
+    if ( invalid_mem_err( ptr, str ) ) {
         exit( EXIT_FAILURE );
     }
+}
+
+void error( const char *str ) {
+    fprintf( stderr, "Error: %s\n", str );
+}
+
+void error_exit( const char *str ) {
+    error( str );
+    exit( EXIT_FAILURE );
 }

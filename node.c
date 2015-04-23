@@ -26,14 +26,12 @@ int compare_node( const void *a, const void *b ) {
 }
 
 bool is_leaf( const node *n ) {
-    check_mem_exit( n, EX_ACCESS );
-
+    invalid_mem_exit( n, EX_ACCESS );
     return ( n->left == NULL && n->right == NULL );
 }
 
 void print_node( const node *n ) {
-    check_mem_exit( n, EX_ACCESS );
-
+    invalid_mem_exit( n, EX_ACCESS );
     printf( "node(%p) [c = %c, freq = %d, left = %p, right = %p]\n",
             ( void * )n, n->c, n->freq, ( void * )n->left, ( void * )n->right );
 }

@@ -4,7 +4,7 @@
 #include "wfreq.h"
 
 map *build_charmap( const char *str ) {
-    check_mem_err( str, EX_ACCESS );
+    invalid_mem_exit( str, EX_ACCESS );
 
     int arr[ASCII_LENGTH] = { 0 };
     for ( size_t i = 0; str[i] != '\0'; i++ ) {
@@ -20,7 +20,9 @@ map *build_charmap( const char *str ) {
     for ( size_t i = 0; i < m->cap; i++ ) {
         for ( size_t j = 0; j < ASCII_LENGTH; j++ ) {
             if ( arr[j] != 0 ) {
-                put( m, new_pair( ( char ) j, arr[j] ) );
+                if ( !put( m, new_pair( ( char ) j, arr[j] ) ) ) {
+                    error_exit( EX_ACCESS );
+                }
                 arr[j] = 0;
                 break;
             }
@@ -32,7 +34,7 @@ map *build_charmap( const char *str ) {
 }
 
 unsigned int get_num_unique_chars( const int *arr ) {
-    check_mem_err( arr, EX_ACCESS );
+    invalid_mem_exit( arr, EX_ACCESS );
 
     unsigned int unique = 0;
     for ( size_t i = 0; i < ASCII_LENGTH; i++ ) {
