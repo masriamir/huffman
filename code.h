@@ -3,7 +3,7 @@
 
 #include "huffman.h"
 
-#define MAX_CODE_LEN 16
+#define MAX_CODE_LEN 64
 
 typedef struct code_t {
     char c;
