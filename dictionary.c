@@ -60,6 +60,17 @@ char get_char( const dictionary *d, const char *bin ) {
     return '\0';
 }
 
+char *encode( const dictionary *d, const char *str ) {
+    char buf[MAX_BUF_LEN] = { 0 };
+    for ( size_t i = 0; i < strlen( str ); i++ ) {
+        strcat( buf, get_code( d, str[i] ) );
+    }
+    char *enc = new_mem( ( 1 + strlen( buf ) ) * sizeof( *enc ) );
+    strncpy( enc, buf, strlen( buf ) );
+    enc[strlen( buf )] = '\0';
+    return enc;
+}
+
 void print_dictionary( const dictionary d ) {
     printf( "dictionary[size = %zu, capacity = %zu]\n", d.size, d.cap );
     for ( size_t i = 0; i < d.size; i++ ) {

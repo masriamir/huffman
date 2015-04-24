@@ -24,6 +24,10 @@ int main ( int argc, char *argv[] ) {
     dictionary *d = build_dictionary( root, charmap->size );
     print_dictionary( *d );
 
+    char *enc = encode( d, str );
+    printf( "encoded: %s\n", enc );
+    free( enc );
+
     free_map( charmap );
     free_tree( root );
     free_dictionary( d );
