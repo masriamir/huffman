@@ -7,7 +7,7 @@
 #include "code.h"
 
 #define DEF_BUF_SZ 64
-#define MAX_BUF_LEN 65535
+#define MAX_BUF_LEN 64
 
 typedef struct dictionary_t {
     code *arr;
