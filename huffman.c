@@ -6,7 +6,6 @@
 #include "node.h"
 #include "tree.h"
 #include "dictionary.h"
-#include "print.h"
 
 char *huffman_encode( const char *str ) {
     map *charmap = build_charmap( str );
