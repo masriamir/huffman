@@ -23,10 +23,4 @@ node *build_tree( const map * );
  */
 void free_tree( node * );
 
-/**
- * Prints the contents of a tree.
- * @param n the root node pointer to the tree
- */
-void print_tree( const node * );
-
 #endif

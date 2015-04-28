@@ -32,10 +32,3 @@ void sort_map( map *m ) {
     invalid_mem_exit( m, EX_ACCESS );
     qsort ( m->arr, m->size, sizeof( *m->arr ), compare_freq );
 }
-
-void print_map( const map m ) {
-    printf( "map[size = %zu, capacity = %zu]\n", m.size, m.cap );
-    for ( size_t i = 0; i < m.size; i++ ) {
-        print_pair( m.arr[i] );
-    }
-}

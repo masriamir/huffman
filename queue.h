@@ -61,10 +61,4 @@ node *peek( const queue * );
  */
 void sort_queue( queue * );
 
-/**
- * Prints the contents of a queue.
- * @param q the queue struct to print
- */
-void print_queue( const queue );
-
 #endif

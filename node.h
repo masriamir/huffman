@@ -51,10 +51,4 @@ int compare_node( const void *, const void * );
  */
 bool is_leaf( const node * );
 
-/**
- * Prints the contents of a node.
- * @param n the node pointer to print
- */
-void print_node( const node * );
-
 #endif

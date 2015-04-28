@@ -47,10 +47,4 @@ bool put( map *, const pair );
  */
 void sort_map( map * );
 
-/**
- * Prints the contents of a character-frequency map.
- * @param map the map struct to print
- */
-void print_map( const map );
-
 #endif

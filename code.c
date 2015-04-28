@@ -17,7 +17,3 @@ code new_code( const char c, const char *bin ) {
 
     return cd;
 }
-
-void print_code( const code cd ) {
-    printf( "code[c = %c, bin = %s]\n", cd.c, cd.bin );
-}

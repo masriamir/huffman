@@ -11,6 +11,5 @@ typedef struct code_t {
 } code;
 
 code new_code( const char, const char * );
-void print_code( const code );
 
 #endif

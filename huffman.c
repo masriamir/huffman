@@ -6,6 +6,7 @@
 #include "node.h"
 #include "tree.h"
 #include "dictionary.h"
+#include "print.h"
 
 int main ( int argc, char *argv[] ) {
     if ( argc != 2 ) {

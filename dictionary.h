@@ -22,6 +22,5 @@ void free_dictionary( dictionary * );
 char *get_code( const dictionary *, const char );
 char get_char( const dictionary *, const char * );
 char *encode( const dictionary *, const char * );
-void print_dictionary( const dictionary );
 
 #endif

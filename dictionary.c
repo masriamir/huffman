@@ -81,10 +81,3 @@ char *encode( const dictionary *d, const char *str ) {
 
     return buf;
 }
-
-void print_dictionary( const dictionary d ) {
-    printf( "dictionary[size = %zu, capacity = %zu]\n", d.size, d.cap );
-    for ( size_t i = 0; i < d.size; i++ ) {
-        print_code( d.arr[i] );
-    }
-}

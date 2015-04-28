@@ -39,15 +39,3 @@ void free_tree( node *n ) {
     free_tree( n->right );
     free_node( n );
 }
-
-void print_tree( const node *n ) {
-    invalid_mem_exit( n, EX_ACCESS );
-
-    if ( is_leaf( n ) ) {
-        print_node( n );
-    } else {
-        print_node( n );
-        print_tree( n->left );
-        print_tree( n->right );
-    }
-}

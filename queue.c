@@ -60,10 +60,3 @@ void sort_queue( queue *q ) {
     invalid_mem_exit( q, EX_ACCESS );
     qsort ( q->arr, q->size, sizeof( *q->arr ), compare_node );
 }
-
-void print_queue( const queue q ) {
-    printf( "queue[size = %zu, capacity = %zu]\n", q.size, q.cap );
-    for ( size_t i = 0; i < q.size; i++ ) {
-        print_node( q.arr[i] );
-    }
-}
