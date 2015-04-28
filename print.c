@@ -44,3 +44,7 @@ void print_tree( const node *n ) {
         print_tree( n->right );
     }
 }
+
+void print_pair( const pair p ) {
+    printf( "%c: %d\n", p.c, p.freq );
+}

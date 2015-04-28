@@ -7,6 +7,7 @@
 #include "queue.h"
 #include "dictionary.h"
 #include "code.h"
+#include "pair.h"
 
 /**
  * Prints the contents of a dictionary code.
@@ -43,5 +44,11 @@ void print_queue( const queue );
  * @param n the root node pointer to the tree
  */
 void print_tree( const node * );
+
+/**
+ * Prints the contents of a pair struct.
+ * @param p the pair struct
+ */
+void print_pair( const pair );
 
 #endif

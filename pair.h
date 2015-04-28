@@ -30,10 +30,4 @@ pair new_pair( const char, const int );
  */
 int compare_freq( const void *, const void * );
 
-/**
- * Prints the contents of a pair struct.
- * @param p the pair struct
- */
-void print_pair( const pair );
-
 #endif
