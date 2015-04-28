@@ -61,14 +61,25 @@ char get_char( const dictionary *d, const char *bin ) {
 }
 
 char *encode( const dictionary *d, const char *str ) {
-    char buf[MAX_BUF_LEN] = { 0 };
+    size_t size = 0;
+    size_t cap = DEF_BUF_SZ;
+    char *buf = new_mem( ( cap + 1 ) * sizeof( *buf ) );
+    *buf = '\0';
+
     for ( size_t i = 0; i < strlen( str ); i++ ) {
-        strcat( buf, get_code( d, str[i] ) );
+        char *code = get_code( d, str[i] );
+        size_t code_len = strlen( code );
+
+        if ( size + code_len >= cap ) {
+            cap *= 2;
+            buf = re_mem( buf, cap + 1 );
+        }
+
+        strcat( buf, code );
+        size += code_len;
     }
-    char *enc = new_mem( ( 1 + strlen( buf ) ) * sizeof( *enc ) );
-    strncpy( enc, buf, strlen( buf ) );
-    enc[strlen( buf )] = '\0';
-    return enc;
+
+    return buf;
 }
 
 void print_dictionary( const dictionary d ) {

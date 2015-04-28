@@ -4,6 +4,7 @@
 #include <stdbool.h>
 
 void *new_mem( const size_t );
+void *re_mem( void *, const size_t );
 void free_mem( void * );
 
 bool invalid_mem( const void * );

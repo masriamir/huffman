@@ -11,6 +11,12 @@ void *new_mem( const size_t size ) {
     return ptr;
 }
 
+void *re_mem( void *ptr, const size_t size ) {
+    void *tmp = realloc( ptr, size );
+    invalid_mem_exit( tmp, EX_MEM );
+    return tmp;
+}
+
 void free_mem( void *ptr ) {
     if ( ptr == NULL ) {
         return;

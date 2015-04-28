@@ -6,6 +6,7 @@
 #include "node.h"
 #include "code.h"
 
+#define DEF_BUF_SZ 64
 #define MAX_BUF_LEN 65535
 
 typedef struct dictionary_t {
