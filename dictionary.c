@@ -1,6 +1,6 @@
 #include <string.h>
 
-#include "huffman.h"
+#include "mem_util.h"
 #include "dictionary.h"
 
 dictionary *new_dictionary( const size_t size ) {

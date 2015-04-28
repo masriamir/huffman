@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-#include "huffman.h"
+#include "mem_util.h"
 #include "node.h"
 
 node *new_node( const char c, const int freq, node *left, node *right ) {

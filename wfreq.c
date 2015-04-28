@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-#include "huffman.h"
+#include "mem_util.h"
 #include "wfreq.h"
 
 map *build_charmap( const char *str ) {

@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+#include "mem_util.h"
 #include "print.h"
 
 void print_code( const code cd ) {

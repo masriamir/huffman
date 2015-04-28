@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#include "huffman.h"
+#include "mem_util.h"
 #include "queue.h"
 
 queue new_queue( const size_t size ) {

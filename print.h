@@ -1,7 +1,6 @@
 #ifndef PRINT_H
 #define PRINT_H
 
-#include "huffman.h"
 #include "node.h"
 #include "map.h"
 #include "queue.h"

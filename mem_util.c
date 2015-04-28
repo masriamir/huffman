@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "huffman.h"
 #include "mem_util.h"
 
 void *new_mem( const size_t size ) {

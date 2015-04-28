@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-#include "huffman.h"
+#include "mem_util.h"
 #include "map.h"
 #include "node.h"
 #include "queue.h"

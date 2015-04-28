@@ -4,6 +4,9 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+#define EX_ACCESS "illegal memory access"
+#define EX_MEM "could not allocate memory"
+
 void *new_mem( const size_t );
 void *re_mem( void *, const size_t );
 void free_mem( void * );
