@@ -1,6 +1,7 @@
 #ifndef MEM_UTIL_H
 #define MEM_UTIL_H
 
+#include <stdlib.h>
 #include <stdbool.h>
 
 void *new_mem( const size_t );

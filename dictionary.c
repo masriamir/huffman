@@ -1,10 +1,6 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include <string.h>
 
-#include "map.h"
-#include "node.h"
-#include "code.h"
+#include "huffman.h"
 #include "dictionary.h"
 
 dictionary *new_dictionary( const size_t size ) {

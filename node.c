@@ -1,7 +1,6 @@
 #include <stdlib.h>
-#include <stdbool.h>
-#include <stdio.h>
 
+#include "huffman.h"
 #include "node.h"
 
 node *new_node( const char c, const int freq, node *left, node *right ) {

@@ -8,7 +8,6 @@
 
 #include <stdbool.h>
 
-#include "huffman.h"
 #include "node.h"
 
 /**

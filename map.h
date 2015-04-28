@@ -6,9 +6,9 @@
 #ifndef MAP_H
 #define MAP_H
 
+#include <stdlib.h>
 #include <stdbool.h>
 
-#include "huffman.h"
 #include "pair.h"
 
 /**

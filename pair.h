@@ -6,8 +6,6 @@
 #ifndef PAIR_H
 #define PAIR_H
 
-#include "huffman.h"
-
 /**
  * Character-frequency pair struct used to build a map.
  */

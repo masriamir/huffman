@@ -1,7 +1,6 @@
 #include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 
+#include "huffman.h"
 #include "map.h"
 
 map *new_map( const size_t size ) {

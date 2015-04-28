@@ -6,7 +6,6 @@
 #ifndef TREE_H
 #define TREE_H
 
-#include "huffman.h"
 #include "map.h"
 
 /**
