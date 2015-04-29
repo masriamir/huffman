@@ -28,8 +28,6 @@ map *build_charmap( const char *str ) {
             }
         }
     }
-
-    sort_map( m );
     return m;
 }
 

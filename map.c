@@ -26,8 +26,3 @@ bool put( map *m, const pair p ) {
     m->arr[ m->size++ ] = p;
     return true;
 }
-
-void sort_map( map *m ) {
-    invalid_mem_exit( m, EX_ACCESS );
-    qsort ( m->arr, m->size, sizeof( *m->arr ), compare_freq );
-}

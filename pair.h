@@ -22,12 +22,4 @@ typedef struct pair_t {
  */
 pair new_pair( const char, const int );
 
-/**
- * Compares two character-frequency pairs by their frequency.
- * @param a the first character-frequency pair
- * @param b the second character-frequency pair
- * @return an int representing the greater of the two pairs
- */
-int compare_freq( const void *, const void * );
-
 #endif

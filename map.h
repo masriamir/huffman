@@ -41,10 +41,4 @@ void free_map( map * );
  */
 bool put( map *, const pair );
 
-/**
- * Sorts a character-frequency map by frequency in descending order.
- * @param map a pointer to a map of character-frequency pairs
- */
-void sort_map( map * );
-
 #endif
