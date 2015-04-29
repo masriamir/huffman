@@ -2,4 +2,7 @@
 *.o
 out
 *.sh
-main.c
+.c
+*.a
+*.so
+*.bak

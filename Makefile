@@ -1,18 +1,22 @@
+CC = gcc
+CFLAGS += -Wall -Wextra -Werror -pedantic-errors -g -O2 -std=c99 -fPIC
+LDFLAGS = -shared
+
 src = $(wildcard *.c)
 obj = $(src:.c=.o)
 
-CFLAGS+=-W -Wall -pedantic-errors -g -std=c99 -fPIC
-LDFLAGS=-shared
+STATIC_LIB = libhuffman.a
+DYNAMIC_LIB = libhuffman.so
 
-out: $(obj)
-	$(CC) -o $@ $^ $(CFLAGS)
+.PHONY: all
+all: $(STATIC_LIB) $(DYNAMIC_LIB)
 
-libhuffman.a: $(obj)
-	ar rcs $@ $^
+$(STATIC_LIB): $(obj)
+	ar vrcs $@ $^
 
-libhuffman.so: $(obj)
-	$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS)
+$(DYNAMIC_LIB): $(obj)
+	$(CC) $(LDFLAGS) -o $@ $^
 
 .PHONY: clean
 clean:
-	rm -f $(obj) out
+	rm -f $(STATIC_LIB) $(DYNAMIC_LIB) $(obj)
