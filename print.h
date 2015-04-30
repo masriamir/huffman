@@ -4,14 +4,7 @@
 #include "node.h"
 #include "map.h"
 #include "queue.h"
-#include "code.h"
 #include "pair.h"
-
-/**
- * Prints the contents of a dictionary code.
- * @param cd the code to print
- */
-void print_code( const code );
 
 /**
  * Prints the contents of a node.

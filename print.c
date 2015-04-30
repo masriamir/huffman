@@ -3,10 +3,6 @@
 #include "mem_util.h"
 #include "print.h"
 
-void print_code( const code cd ) {
-    printf( "code[c = %c, bin = %s]\n", cd.c, cd.bin );
-}
-
 void print_node( const node *n ) {
     invalid_mem_exit( n, EX_ACCESS );
     printf( "node(%p) [c = %c, freq = %d, bits = %s, left = %p, right = %p]\n",
