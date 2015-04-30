@@ -2,21 +2,13 @@
 #define PRINT_H
 
 #include "node.h"
-#include "map.h"
 #include "queue.h"
-#include "pair.h"
 
 /**
  * Prints the contents of a node.
  * @param n the node pointer to print
  */
 void print_node( const node * );
-
-/**
- * Prints the contents of a character-frequency map.
- * @param map the map struct to print
- */
-void print_map( const map );
 
 /**
  * Prints the contents of a queue.
@@ -29,11 +21,5 @@ void print_queue( const queue );
  * @param n the root node pointer to the tree
  */
 void print_tree( const node * );
-
-/**
- * Prints the contents of a pair struct.
- * @param p the pair struct
- */
-void print_pair( const pair );
 
 #endif

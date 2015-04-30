@@ -3,16 +3,25 @@
 
 #include "mem_util.h"
 #include "tree.h"
-#include "map.h"
 #include "node.h"
 #include "queue.h"
 
-node *build_tree( const map *m ) {
-    queue q = new_queue( m->size );
-    for ( size_t i = 0; i < m->size; i++ ) {
-        node *n = new_node( m->arr[i].c, m->arr[i].freq, NULL, NULL );
-        if ( !offer( &q, n ) ) {
-            error_exit( EX_ACCESS );
+//TODO refactor?
+node *build_tree( const char *str ) {
+    int char_freq[ASCII] = { 0 };
+    for ( size_t i = 0; str[i] != '\0'; i++ ) {
+        // arr index is ascii value of char
+        int ascii = ( int ) str[i];
+        char_freq[ascii]++;
+    }
+
+    queue q = new_queue( DEF_QUEUE_SZ );
+    for ( size_t i = 0; i < ASCII; i++ ) {
+        if ( char_freq[i] != 0 ) {
+            node *n = new_node( i, char_freq[i], NULL, NULL );
+            if ( !offer( &q, n ) ) {
+                error_exit( EX_ACCESS );
+            }
         }
     }
 

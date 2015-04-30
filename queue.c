@@ -27,6 +27,12 @@ bool offer( queue *q, node *el ) {
         return false;
     }
 
+    // resize the queue
+    if ( q->size == q->cap ) {
+        q->cap = q->size * 2;
+        q->arr = re_mem( q->arr, q->cap * sizeof( *q->arr ) );
+    }
+
     q->arr[ q->size++ ] = el;
     sort_queue( q );
     return true;

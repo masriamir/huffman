@@ -6,16 +6,17 @@
 #ifndef TREE_H
 #define TREE_H
 
-#include "map.h"
 #include "node.h"
+
+#define ASCII 256 ///< number of ASCII characters
+#define DEF_QUEUE_SZ 64 ///< default queue size to use when building tree
 
 /**
  * Constructs a Huffman tree and returns a pointer to the root node.
- * @param charmap the character frequency map pointer to build the tree from
- * @param size the number of elements in the charmap
+ * @param str the string to use when generating the tree
  * @return a pointer to the root node of the tree
  */
-node *build_tree( const map * );
+node *build_tree( const char * );
 
 /**
  * Generates the huffman codes for each leaf in the given tree.
