@@ -94,27 +94,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="tree_8h.html#a60710bac11b4f1135f61ded06542d661">   11</a></span>&#160;<span class="preprocessor">#define ASCII 256 </span></div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="tree_8h.html#ac08d94cd8995f07c84425d46084d807c">   12</a></span>&#160;<span class="preprocessor">#define DEF_QUEUE_SZ 64 </span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<a class="code" href="structnode__t.html">node</a> *<a class="code" href="tree_8h.html#a49bc9ceaa162ed8b5b8416aa4663acfc">build_tree</a>( <span class="keyword">const</span> <span class="keywordtype">char</span> * );</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">void</span> <a class="code" href="tree_8h.html#a2efc334fdbb07b61329f2fad856e4232">encode_tree</a>( <a class="code" href="structnode__t.html">node</a> *, <span class="keywordtype">char</span> * );</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<a class="code" href="structnode__t.html">node</a> *<a class="code" href="tree_8h.html#a71a7ddfb234f638ade4becc5c05e76ed">get_node</a>( <span class="keyword">const</span> <a class="code" href="structnode__t.html">node</a> *, <span class="keyword">const</span> <span class="keywordtype">char</span> );</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">void</span> <a class="code" href="tree_8h.html#af78c088a809a989bced1c04b3f60ddb3">free_tree</a>( <a class="code" href="structnode__t.html">node</a> * );</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="tree_8h.html#a7ee0e118298c69246515a4b94bcf4b00">   13</a></span>&#160;<span class="preprocessor">#define DEF_BUF_SZ 1024 * 32 </span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<a class="code" href="structnode__t.html">node</a> *<a class="code" href="tree_8h.html#a49bc9ceaa162ed8b5b8416aa4663acfc">build_tree</a>( <span class="keyword">const</span> <span class="keywordtype">char</span> * );</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> <a class="code" href="tree_8h.html#a2efc334fdbb07b61329f2fad856e4232">encode_tree</a>( <a class="code" href="structnode__t.html">node</a> *, <span class="keywordtype">char</span> * );</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">char</span> *<a class="code" href="tree_8h.html#a86742a89b71c182c6774662516c6d04e">encode</a>( <span class="keyword">const</span> <a class="code" href="structnode__t.html">node</a> *, <span class="keyword">const</span> <span class="keywordtype">char</span> * );</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<a class="code" href="structnode__t.html">node</a> *<a class="code" href="tree_8h.html#a71a7ddfb234f638ade4becc5c05e76ed">get_node</a>( <span class="keyword">const</span> <a class="code" href="structnode__t.html">node</a> *, <span class="keyword">const</span> <span class="keywordtype">char</span> );</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">void</span> <a class="code" href="tree_8h.html#af78c088a809a989bced1c04b3f60ddb3">free_tree</a>( <a class="code" href="structnode__t.html">node</a> * );</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="tree_8h_html_a49bc9ceaa162ed8b5b8416aa4663acfc"><div class="ttname"><a href="tree_8h.html#a49bc9ceaa162ed8b5b8416aa4663acfc">build_tree</a></div><div class="ttdeci">node * build_tree(const char *)</div><div class="ttdoc">Constructs a huffman tree based on the given string. </div><div class="ttdef"><b>Definition:</b> tree.c:10</div></div>
 <div class="ttc" id="structnode__t_html"><div class="ttname"><a href="structnode__t.html">node_t</a></div><div class="ttdoc">Node struct used when building a huffman tree. </div><div class="ttdef"><b>Definition:</b> node.h:16</div></div>
 <div class="ttc" id="node_8h_html"><div class="ttname"><a href="node_8h.html">node.h</a></div><div class="ttdoc">Huffman node implementation. </div></div>
-<div class="ttc" id="tree_8h_html_a71a7ddfb234f638ade4becc5c05e76ed"><div class="ttname"><a href="tree_8h.html#a71a7ddfb234f638ade4becc5c05e76ed">get_node</a></div><div class="ttdeci">node * get_node(const node *, const char)</div><div class="ttdoc">Finds and returns a specific node from a given tree. </div><div class="ttdef"><b>Definition:</b> tree.c:62</div></div>
+<div class="ttc" id="tree_8h_html_a71a7ddfb234f638ade4becc5c05e76ed"><div class="ttname"><a href="tree_8h.html#a71a7ddfb234f638ade4becc5c05e76ed">get_node</a></div><div class="ttdeci">node * get_node(const node *, const char)</div><div class="ttdoc">Finds and returns a specific node from a given tree. </div><div class="ttdef"><b>Definition:</b> tree.c:85</div></div>
+<div class="ttc" id="tree_8h_html_a86742a89b71c182c6774662516c6d04e"><div class="ttname"><a href="tree_8h.html#a86742a89b71c182c6774662516c6d04e">encode</a></div><div class="ttdeci">char * encode(const node *, const char *)</div><div class="ttdoc">Encodes a given string using the given huffman tree. </div><div class="ttdef"><b>Definition:</b> tree.c:62</div></div>
 <div class="ttc" id="tree_8h_html_a2efc334fdbb07b61329f2fad856e4232"><div class="ttname"><a href="tree_8h.html#a2efc334fdbb07b61329f2fad856e4232">encode_tree</a></div><div class="ttdeci">void encode_tree(node *, char *)</div><div class="ttdoc">Generates the huffman codes for each leaf in the given tree. </div><div class="ttdef"><b>Definition:</b> tree.c:47</div></div>
-<div class="ttc" id="tree_8h_html_af78c088a809a989bced1c04b3f60ddb3"><div class="ttname"><a href="tree_8h.html#af78c088a809a989bced1c04b3f60ddb3">free_tree</a></div><div class="ttdeci">void free_tree(node *)</div><div class="ttdoc">Frees the given tree from memory. </div><div class="ttdef"><b>Definition:</b> tree.c:85</div></div>
+<div class="ttc" id="tree_8h_html_af78c088a809a989bced1c04b3f60ddb3"><div class="ttname"><a href="tree_8h.html#af78c088a809a989bced1c04b3f60ddb3">free_tree</a></div><div class="ttdeci">void free_tree(node *)</div><div class="ttdoc">Frees the given tree from memory. </div><div class="ttdef"><b>Definition:</b> tree.c:108</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 30 2015 12:52:26 for Huffman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 30 2015 12:59:47 for Huffman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

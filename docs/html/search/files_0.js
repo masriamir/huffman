@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dictionary_2eh',['dictionary.h',['../dictionary_8h.html',1,'']]]
+  ['huffman_2eh',['huffman.h',['../huffman_8h.html',1,'']]]
 ];
