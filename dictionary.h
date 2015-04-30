@@ -3,7 +3,7 @@
 
 #include "node.h"
 
-#define DEF_BUF_SZ 64
+#define DEF_BUF_SZ 1024 * 32
 
 char *encode( const node *, const char * );
 
