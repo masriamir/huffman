@@ -4,7 +4,6 @@
 #include "node.h"
 #include "map.h"
 #include "queue.h"
-#include "dictionary.h"
 #include "code.h"
 #include "pair.h"
 
@@ -13,12 +12,6 @@
  * @param cd the code to print
  */
 void print_code( const code );
-
-/**
- * Prints the contents of a huffman dictionary.
- * @param d the dictionary to print
- */
-void print_dictionary( const dictionary );
 
 /**
  * Prints the contents of a node.

@@ -10,10 +10,8 @@
 char *huffman_encode( const char *str ) {
     map *charmap = build_charmap( str );
     node *root = build_tree( charmap );
-    dictionary *d = build_dictionary( root, charmap->size );
     free_map( charmap );
+    char *enc = encode( root, str );
     free_tree( root );
-    char *enc = encode( d, str );
-    free_dictionary( d );
     return enc;
 }

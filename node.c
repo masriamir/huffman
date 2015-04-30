@@ -8,6 +8,7 @@ node *new_node( const char c, const int freq, node *left, node *right ) {
 
     n->c = c;
     n->freq = freq;
+    n->bits = NULL;
     n->left = left;
     n->right = right;
 
@@ -15,6 +16,7 @@ node *new_node( const char c, const int freq, node *left, node *right ) {
 }
 
 void free_node( node *n ) {
+    free_mem( n->bits );
     free_mem( n );
 }
 

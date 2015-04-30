@@ -8,12 +8,15 @@
 
 #include <stdbool.h>
 
+#define MAX_CODE_LENGTH 32
+
 /**
  * Node struct to build a huffman tree.
  */
 typedef struct node_t {
     char c; ///< character
     int freq; ///< frequency
+    char *bits; ///< encoded bits
     struct node_t *left; ///< left child pointer
     struct node_t *right; ///< right child pointer
 } node;

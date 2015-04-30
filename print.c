@@ -7,17 +7,11 @@ void print_code( const code cd ) {
     printf( "code[c = %c, bin = %s]\n", cd.c, cd.bin );
 }
 
-void print_dictionary( const dictionary d ) {
-    printf( "dictionary[size = %zu, capacity = %zu]\n", d.size, d.cap );
-    for ( size_t i = 0; i < d.size; i++ ) {
-        print_code( d.arr[i] );
-    }
-}
-
 void print_node( const node *n ) {
     invalid_mem_exit( n, EX_ACCESS );
-    printf( "node(%p) [c = %c, freq = %d, left = %p, right = %p]\n",
-            ( void * )n, n->c, n->freq, ( void * )n->left, ( void * )n->right );
+    printf( "node(%p) [c = %c, freq = %d, bits = %s, left = %p, right = %p]\n",
+            ( void * )n, n->c, n->freq, n->bits,
+                ( void * )n->left, ( void * )n->right );
 }
 
 void print_map( const map m ) {
