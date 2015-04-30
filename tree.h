@@ -10,6 +10,7 @@
 
 #define ASCII 256 ///< number of ASCII characters
 #define DEF_QUEUE_SZ 64 ///< default queue size to use when building tree
+#define DEF_BUF_SZ 1024 * 32 ///< default size of the encoded buffer
 
 /**
  * Constructs a huffman tree based on the given string.
@@ -24,6 +25,14 @@ node *build_tree( const char * );
  * @param buf a character buffer to concatenate generated codes
  */
 void encode_tree( node *, char * );
+
+/**
+ * Encodes a given string using the given huffman tree.
+ * @param root a pointer to the root node of the tree
+ * @param str the string to encode
+ * @return the huffman encoded string
+ */
+char *encode( const node *, const char * );
 
 /**
  * Finds and returns a specific node from a given tree.

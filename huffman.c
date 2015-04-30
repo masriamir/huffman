@@ -3,7 +3,6 @@
 
 #include "node.h"
 #include "tree.h"
-#include "dictionary.h"
 
 char *huffman_encode( const char *str ) {
     node *root = build_tree( str );
