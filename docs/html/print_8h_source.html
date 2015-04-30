@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>Huffman: dictionary.h Source File</title>
+<title>Huffman: print.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,24 +83,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">dictionary.h</div>  </div>
+<div class="title">print.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="dictionary_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef DICTIONARY_H</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define DICTIONARY_H</span></div>
+<a href="print_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef PRINT_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define PRINT_H</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="node_8h.html">node.h</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="dictionary_8h.html#a7ee0e118298c69246515a4b94bcf4b00">   11</a></span>&#160;<span class="preprocessor">#define DEF_BUF_SZ 1024 * 32 </span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">char</span> *<a class="code" href="dictionary_8h.html#a86742a89b71c182c6774662516c6d04e">encode</a>( <span class="keyword">const</span> <a class="code" href="structnode__t.html">node</a> *, <span class="keyword">const</span> <span class="keywordtype">char</span> * );</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="queue_8h.html">queue.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keywordtype">void</span> <a class="code" href="print_8h.html#a15b396f7ccd7022ea8b448d1cfdcd3a5">print_node</a>( <span class="keyword">const</span> <a class="code" href="structnode__t.html">node</a> * );</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span> <a class="code" href="print_8h.html#a6e4288543a7dfcf2495c8996c0e04e97">print_queue</a>( <span class="keyword">const</span> <a class="code" href="structqueue__t.html">queue</a> );</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> <a class="code" href="print_8h.html#a4ab379e2c14cac825301b8bfdd9cf93e">print_tree</a>( <span class="keyword">const</span> <a class="code" href="structnode__t.html">node</a> * );</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="structnode__t_html"><div class="ttname"><a href="structnode__t.html">node_t</a></div><div class="ttdoc">Node struct used when building a huffman tree. </div><div class="ttdef"><b>Definition:</b> node.h:16</div></div>
 <div class="ttc" id="node_8h_html"><div class="ttname"><a href="node_8h.html">node.h</a></div><div class="ttdoc">Huffman node implementation. </div></div>
-<div class="ttc" id="dictionary_8h_html_a86742a89b71c182c6774662516c6d04e"><div class="ttname"><a href="dictionary_8h.html#a86742a89b71c182c6774662516c6d04e">encode</a></div><div class="ttdeci">char * encode(const node *, const char *)</div><div class="ttdoc">Encodes a given string using the given huffman tree. </div><div class="ttdef"><b>Definition:</b> dictionary.c:7</div></div>
+<div class="ttc" id="print_8h_html_a6e4288543a7dfcf2495c8996c0e04e97"><div class="ttname"><a href="print_8h.html#a6e4288543a7dfcf2495c8996c0e04e97">print_queue</a></div><div class="ttdeci">void print_queue(const queue)</div><div class="ttdoc">Prints the contents of a given queue. </div><div class="ttdef"><b>Definition:</b> print.c:13</div></div>
+<div class="ttc" id="queue_8h_html"><div class="ttname"><a href="queue_8h.html">queue.h</a></div><div class="ttdoc">Priority queue implementation to handle nodes. </div></div>
+<div class="ttc" id="structqueue__t_html"><div class="ttname"><a href="structqueue__t.html">queue_t</a></div><div class="ttdoc">Queue struct using an array to store data. </div><div class="ttdef"><b>Definition:</b> queue.h:16</div></div>
+<div class="ttc" id="print_8h_html_a15b396f7ccd7022ea8b448d1cfdcd3a5"><div class="ttname"><a href="print_8h.html#a15b396f7ccd7022ea8b448d1cfdcd3a5">print_node</a></div><div class="ttdeci">void print_node(const node *)</div><div class="ttdoc">Prints the contents of a given node. </div><div class="ttdef"><b>Definition:</b> print.c:6</div></div>
+<div class="ttc" id="print_8h_html_a4ab379e2c14cac825301b8bfdd9cf93e"><div class="ttname"><a href="print_8h.html#a4ab379e2c14cac825301b8bfdd9cf93e">print_tree</a></div><div class="ttdeci">void print_tree(const node *)</div><div class="ttdoc">Prints the contents of a given tree. </div><div class="ttdef"><b>Definition:</b> print.c:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

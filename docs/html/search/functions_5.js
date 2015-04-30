@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['new_5fmap',['new_map',['../map_8h.html#a84d68990a25e3343be8935c03aa0db4f',1,'map.c']]],
-  ['new_5fnode',['new_node',['../node_8h.html#a5ee37dda1ea8d5bf443f87599dd145ac',1,'node.c']]],
-  ['new_5fpair',['new_pair',['../pair_8h.html#acecdb4ec309872fc0a2fb228f3925e4d',1,'pair.c']]],
-  ['new_5fqueue',['new_queue',['../queue_8h.html#acbd0a1fa8fbf7c4fdd830017ac60951f',1,'queue.c']]]
+  ['huffman_5fencode',['huffman_encode',['../huffman_8h.html#a633a159b76a07102b8c04a1290c897c1',1,'huffman.c']]]
 ];

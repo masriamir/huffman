@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tree_2eh',['tree.h',['../tree_8h.html',1,'']]]
+  ['right',['right',['../structnode__t.html#ad966fa756fa1d26aca1d092126d9c9c7',1,'node_t']]]
 ];

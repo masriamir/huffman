@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['resize_5fqueue',['resize_queue',['../queue_8h.html#a5cadce6679980245b60795ea0b60b797',1,'queue.c']]]
+  ['offer',['offer',['../queue_8h.html#a72f1443468e02db17f6bf787eaf32ff3',1,'queue.c']]]
 ];

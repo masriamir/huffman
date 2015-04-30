@@ -83,6 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">tree.h File Reference</div>  </div>
@@ -91,49 +92,96 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>Huffman tree builder.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;huffman.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="map_8h_source.html">map.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="node_8h_source.html">node.h</a>&quot;</code><br />
 </div>
 <p><a href="tree_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a60710bac11b4f1135f61ded06542d661"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a60710bac11b4f1135f61ded06542d661"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree_8h.html#a60710bac11b4f1135f61ded06542d661">ASCII</a>&#160;&#160;&#160;256</td></tr>
+<tr class="memdesc:a60710bac11b4f1135f61ded06542d661"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of ASCII characters <br /></td></tr>
+<tr class="separator:a60710bac11b4f1135f61ded06542d661"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac08d94cd8995f07c84425d46084d807c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac08d94cd8995f07c84425d46084d807c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree_8h.html#ac08d94cd8995f07c84425d46084d807c">DEF_QUEUE_SZ</a>&#160;&#160;&#160;64</td></tr>
+<tr class="memdesc:ac08d94cd8995f07c84425d46084d807c"><td class="mdescLeft">&#160;</td><td class="mdescRight">default queue size to use when building tree <br /></td></tr>
+<tr class="separator:ac08d94cd8995f07c84425d46084d807c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7f0aa69d50c7301326722b0fdc6b007c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree_8h.html#a7f0aa69d50c7301326722b0fdc6b007c">build_tree</a> (const <a class="el" href="map_8h.html#a2cb3eb8a3c78017d53696b6b9f8eb352">map</a> *)</td></tr>
-<tr class="memdesc:a7f0aa69d50c7301326722b0fdc6b007c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a Huffman tree and returns a pointer to the root node.  <a href="#a7f0aa69d50c7301326722b0fdc6b007c">More...</a><br /></td></tr>
-<tr class="separator:a7f0aa69d50c7301326722b0fdc6b007c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49bc9ceaa162ed8b5b8416aa4663acfc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree_8h.html#a49bc9ceaa162ed8b5b8416aa4663acfc">build_tree</a> (const char *)</td></tr>
+<tr class="memdesc:a49bc9ceaa162ed8b5b8416aa4663acfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a huffman tree based on the given string.  <a href="#a49bc9ceaa162ed8b5b8416aa4663acfc">More...</a><br /></td></tr>
+<tr class="separator:a49bc9ceaa162ed8b5b8416aa4663acfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2efc334fdbb07b61329f2fad856e4232"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree_8h.html#a2efc334fdbb07b61329f2fad856e4232">encode_tree</a> (<a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *, char *)</td></tr>
+<tr class="memdesc:a2efc334fdbb07b61329f2fad856e4232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the huffman codes for each leaf in the given tree.  <a href="#a2efc334fdbb07b61329f2fad856e4232">More...</a><br /></td></tr>
+<tr class="separator:a2efc334fdbb07b61329f2fad856e4232"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71a7ddfb234f638ade4becc5c05e76ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree_8h.html#a71a7ddfb234f638ade4becc5c05e76ed">get_node</a> (const <a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *, const char)</td></tr>
+<tr class="memdesc:a71a7ddfb234f638ade4becc5c05e76ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds and returns a specific node from a given tree.  <a href="#a71a7ddfb234f638ade4becc5c05e76ed">More...</a><br /></td></tr>
+<tr class="separator:a71a7ddfb234f638ade4becc5c05e76ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af78c088a809a989bced1c04b3f60ddb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree_8h.html#af78c088a809a989bced1c04b3f60ddb3">free_tree</a> (<a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *)</td></tr>
 <tr class="memdesc:af78c088a809a989bced1c04b3f60ddb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the given tree from memory.  <a href="#af78c088a809a989bced1c04b3f60ddb3">More...</a><br /></td></tr>
 <tr class="separator:af78c088a809a989bced1c04b3f60ddb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ab379e2c14cac825301b8bfdd9cf93e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree_8h.html#a4ab379e2c14cac825301b8bfdd9cf93e">print_tree</a> (const <a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *)</td></tr>
-<tr class="memdesc:a4ab379e2c14cac825301b8bfdd9cf93e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the contents of a tree.  <a href="#a4ab379e2c14cac825301b8bfdd9cf93e">More...</a><br /></td></tr>
-<tr class="separator:a4ab379e2c14cac825301b8bfdd9cf93e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Huffman tree builder. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a7f0aa69d50c7301326722b0fdc6b007c"></a>
+<a class="anchor" id="a49bc9ceaa162ed8b5b8416aa4663acfc"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a>* build_tree </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="map_8h.html#a2cb3eb8a3c78017d53696b6b9f8eb352">map</a> *&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a Huffman tree and returns a pointer to the root node. </p>
+<p>Constructs a huffman tree based on the given string. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">charmap</td><td>the character frequency map pointer to build the tree from </td></tr>
-    <tr><td class="paramname">size</td><td>the number of elements in the charmap </td></tr>
+    <tr><td class="paramname">str</td><td>the string </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a pointer to the root node of the tree </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2efc334fdbb07b61329f2fad856e4232"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void encode_tree </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generates the huffman codes for each leaf in the given tree. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">root</td><td>a pointer to the root node of the tree </td></tr>
+    <tr><td class="paramname">buf</td><td>a character buffer to concatenate generated codes </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -161,34 +209,46 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4ab379e2c14cac825301b8bfdd9cf93e"></a>
+<a class="anchor" id="a71a7ddfb234f638ade4becc5c05e76ed"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void print_tree </td>
+          <td class="memname"><a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a>* get_node </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="node_8h.html#a1c1c4438956188a85fe68f77f997b9e0">node</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Prints the contents of a tree. </p>
+<p>Finds and returns a specific node from a given tree. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">n</td><td>the root node pointer to the tree </td></tr>
+    <tr><td class="paramname">root</td><td>a pointer to the root node of the tree </td></tr>
+    <tr><td class="paramname">c</td><td>the character to search for </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>a pointer to the node if found, NULL otherwise </dd></dl>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 23 2015 12:20:23 for Huffman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 30 2015 12:52:26 for Huffman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

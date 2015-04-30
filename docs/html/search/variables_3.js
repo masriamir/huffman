@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['left',['left',['../structnode__t.html#ac08d5277af93a445d358059e7ac81cb1',1,'node_t']]]
+  ['freq',['freq',['../structnode__t.html#a9e42b84da748936e09ca0bb534f21cbc',1,'node_t']]]
 ];

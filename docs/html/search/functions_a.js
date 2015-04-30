@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['word_5ffrequency',['word_frequency',['../map_8h.html#a7f713ddbaafdb51ac674cad518de2288',1,'map.c']]]
+  ['sort_5fqueue',['sort_queue',['../queue_8h.html#a30eea4f4a82e5e6d652d5e808978f7aa',1,'queue.c']]]
 ];

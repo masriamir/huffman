@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['offer',['offer',['../queue_8h.html#a72f1443468e02db17f6bf787eaf32ff3',1,'queue.c']]]
+  ['is_5fleaf',['is_leaf',['../node_8h.html#a395a1095daa9eb12d805370638483424',1,'node.c']]]
 ];

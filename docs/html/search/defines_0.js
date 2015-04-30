@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ascii_5flength',['ASCII_LENGTH',['../wfreq_8h.html#a6c61effb25be9e803a462b22e1b23413',1,'wfreq.h']]]
+  ['ascii',['ASCII',['../tree_8h.html#a60710bac11b4f1135f61ded06542d661',1,'tree.h']]]
 ];
