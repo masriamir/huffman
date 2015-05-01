@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS += -Wall -Wextra -Werror -pedantic-errors -g -O2 -std=c99 -fPIC
 LDFLAGS = -shared
 
-src = $(wildcard *.c)
+src = $(wildcard src/*.c)
 obj = $(src:.c=.o)
 
 STATIC_LIB = libhuffman.a
