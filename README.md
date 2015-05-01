@@ -11,9 +11,11 @@ Simply run `make` and both static and dynamic libraries will be generated. Make 
 ## Example
 
 Huffman-encode a string:
+
     char *encoded = huffman_encode( "my plain string" );
 
 You must free the pointer when you are done.
+
     free( encoded );
 
 ## Features
